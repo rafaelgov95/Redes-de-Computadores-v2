@@ -14,7 +14,7 @@ Antes preciso deixar claro que ela não é um sistema único, além de tudo é d
 
 
 ### Quais são os principais desafios do futuro ? Tópicos avançados e temas de pesquisa ?
-A diversos como a migração do IPV4 para o IPV6 ou ate mesmo um protocolo de rede para substituir o IP. Somente o futuro dirá acredito que cada problema foi modelando o sistema existente e as camadas auxiliao toda a coexistencia da evolução e produção da Intenet. Protocolos mais modulares deveriam ser adotados no local do TCP/IP talves.
+A diversos como a migração do IPV4 para o IPV6 ou até mesmo um protocolo de rede para substituir o IP. Somente o futuro dirá acredito que cada problema foi modelando o sistema existente e as camadas auxilia toda a coexistência da evolução e produção da Intenet. Protocolos mais modulares deveriam ser adotados no local do TCP/IP talvez.
 
 
 ## Por que fazer este curso ?
