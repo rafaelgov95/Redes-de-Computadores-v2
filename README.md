@@ -1,2 +1,4 @@
-# Redes-de-computadores-Mestrado
-Viva o conhecimento não o guardar.
+# Redes-de-computadores-V2
+### Meu repósitorio de citações dos grandes!
+
+
