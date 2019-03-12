@@ -1,4 +1,4 @@
-# Redes-de-computadores-VII
+# Redes de computadores V2
 #### Meu repósitorio de citações dos grandes!
 #### Rafael Viana - Viva intensamente e estude todo dia.
 #### Pensamentos amplamente ”Total” baseados em: Tanenbaum | Wetherall | Kurose | Ross
