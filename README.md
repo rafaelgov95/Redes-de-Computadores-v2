@@ -4,8 +4,9 @@
 #### Pensamentos amplamente ”Total” baseados em: Tanenbaum | Wetherall | Kurose | Ross
 
 # Aulas e Atividades
+
 ## Aula 1  
-    [Lista 1](https://github.com/rafaelgov95/Redes-de-Computadores-v2/blob/master/Aula-1/Lista-1/README.md)
+>   [Lista 1](https://github.com/rafaelgov95/Redes-de-Computadores-v2/blob/master/Aula-1/Lista-1/README.md)
 
 # Ementa
 
