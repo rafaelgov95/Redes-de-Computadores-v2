@@ -2,6 +2,13 @@
 #### Meu repósitorio de citações dos grandes!
 #### Rafael Viana - Viva intensamente e estude todo dia.
 #### Pensamentos amplamente ”Total” baseados em: Tanenbaum | Wetherall | Kurose | Ross
+
+# Aulas e Atividades
+## Aula 1 - 
+-- Lista 1
+
+# Ementa
+
 ## Objetivos
 
 ### Estudar conceitos e problemas fundamentais em Redes de Computadores, quais foram os reais desafios ? (28 pag - 43 pag) 
