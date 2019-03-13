@@ -5,7 +5,7 @@
 
 # Aulas e Atividades
 ## Aula 1  
-    Lista 1 
+    Lista 1  
 
 # Ementa
 
