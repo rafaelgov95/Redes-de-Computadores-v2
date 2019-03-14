@@ -25,7 +25,7 @@
       
       * Contexto: Com quais artigo este documento esta vinculado? Quais bases teoricas foram utilizada?
 
-      * Corrigidez: As suposições parecem válidas?
+      * Correction: As suposições parecem válidas?
 
       * Contribuições: Quais são as principais contribuições do artigo?
 
