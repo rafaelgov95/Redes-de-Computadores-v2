@@ -264,3 +264,147 @@
     | KB |   2^10 | 10^6
     | MEGA | 2^20  | 10^7  |
     |GIGA |  2^30 | 10^8  
+
+  #### Atraso em redes comutadas por pacotes
+  * pacotes sofrem atrasos no caminho fim a fim
+  * quatro fontes atraso em cada etapa (roteador)
+    * D(no)=processamento+enfileiramento+transmissão+propagação
+      ##### 1 Processamento
+        * Verificação de bits com erro
+        * identif. do enlace de saída
+      ##### 2 Enfileiramento
+        * tempo de espera no enlace de saída até a transmissão depende do nível de congestionemnto do roteador
+      ##### 3 Atraso de transmissão
+        * tempo para colocar os bits no enlace
+        * depende da taxa de transmissão do enlace e do tamanho do pacote
+          * R = taxa transm(largura de banda do enlace)(bps)
+          * L = tamanho do pacote (bits) 
+          * trasmissão = R/L
+      ##### 4 Atraso de Propagação
+        * Tempo de colocar os bits no meio (Comprimento do enlace)
+        * RTT = 2*propagação (generalizando)
+        * 
+          * D = compr. do enlace 
+          * S = velocidade de propagação no meio       
+          * Propagação = D/S
+  
+      #### Exemplos 
+        * Por exemplo, transferência de um arquivo de 1MB em um enlace de fibra óptica de 10Mbps e a uma distância de 5000 m. Velocidade de propagação em fibra 2x10 8 m/s
+          * Ignorando fila de espera e atraso de processamento no nó.
+          * Atraso de transmissão: (2 10 x2 10 x8)/10x10 6 = 0.839s
+          * Atraso de propagação: 5000/2x10 8 = 0.025ms
+          * Latência (ou atraso) = 0.839s.
+      
+        * Mudando agora de 10 Mbps para 10 Gbps:
+          * Atraso de transmissão: (1x2 20 x8)/10x10 9 = 0.839ms
+          * Latência = 0.864ms
+  
+    #### Produto: Retardo X Largura de banda
+    * Produto: Delay x Bandwidth
+    * Quantidade de dados "em vôo" ou "na tubulação"
+      * Volume de dados em "transito" no canal
+    * Normamente realtivo ao RTT
+    * Exemplo: 100ms x 45Mbps = ~549kb
+      * (((45*10^6) * (100/10^3))/8)/2^10 = 549 KB
+      * (((549 * 2^10))/((100/10^3))*8)/10^6 = 45Mbps
+      * ((549 * 2^10 * 8)/(45 * 10^6))*10^3 = 99.942000 ms
+
+
+    #### Atraso de enfileiramento
+    * Fila: tempo que pacote espera até iniciar sua transmissão
+    * Depende da intensidade de tráfego: La/R
+      * R=largura de banda do enlace (bps)
+      * L= tamanho médio dos pacotes (bits)
+      * a=taxa média de chegada de pacotes Atraso de enfileiramento
+        * La/R ~ 0: pequeno atraso de enfileiramento
+        * La/R ~ 1: alto atraso médio
+        * La/R > 1 : chega mais “trabalho” do que a
+        
+        *capacidade de atendimento, atraso médio infinito!!(assumindo capacidade de fila infinita!)
+        
+    #### Perda de pacotes
+    * Na realidade: filas dos roteadores têm tamanho limitado
+    * O que acontece quando um pacote chega a um roteador cuja fila está cheia?
+      * O pacote é descartado (i.e., perdido)!
+    * Taxa de perda de pacotes aumenta à medida que a intensidade do tráfego (La/R) aumenta
+      * taxa de chegada de pacotes ao enlace excede a capacidade do enlace de saída.
+      * pacotes perdidos podem ser retransmitidos (ou não)
+    
+    #### Jitter de Pacotes
+    * Variação do atraso entre pacotes
+    * É uma medida da suavidade do processo de chegada de pacotes e pode ser expresso como a variabilidade do intervalo de tempo entre chegada de pacotes.
+    * O jitter pode ocorrer devido à variação no tempo dos atrasos das filas nos roteadores ao longo do caminho.
+    * Chegada de pacotes com baixo jitter são mais previsíveis e leva a um desempenho na camada de aplicação mais confiável.
+
+    #### Vazão (Throughput)
+    * vazão: taxa (bits/unidade de tempo) na qual os bits são transferidos entre o transmissor e o receptor
+      * instantânea: taxa num certo instante de tempo
+      * média: taxa num período de tempo mais longo
+    * vazão fim a fim
+      * Taxa do enlace de gargalo: min {R c , R s }
+    * Vazão efetiva fim a fim:
+      * Throughput = TransferSize/TransferTime
+      * TranferTime = RTT + TransferSize/Bandwidth
+    * Considerando que o tempo de transferência engloba a latência em um sentido e também o tempo adicional para requisitar ou estabelecer a transferência
+
+    #### Atrasos e Rotas na Internet
+    * Como se mostram os atrasos e perdas na Internet?
+    * Programa traceroute: realiza medidas de atraso da origem para cada roteador ao longo do caminho até o destino na Internet. Para todo i:
+      * envia três pacotes que chegarão ao roteador j no caminho em direção ao destino (i.e., três experimentos distintos)
+      * roteador j retornará pacotes de resposta à origem
+      * origem mede o intervalo de tempo entre a transmissão dos pacotes e a recepção das respostas
+
+    #### Outras Métricas
+    * "Atraso de ida“ (One-way delay - OWD)
+    * Goodput : taxa na qual a aplicação recebe dados com sucesso
+    * Capacidade de Transmissão dos Enlaces (fim a fim)
+    * Capacidade de Transmissão do Gargalo
+    * Tamanho do Buffer no Gargalo
+    * Caminho (Path)
+    * Nota: Estimar algumas dessas métricas é elativamente simples, no entanto, outras requerem algoritmos mais sofisticados.
+     
+    #### Técnicas de Medição
+    * Duas técnicas existentes:
+      * Ativa:
+        * Adicionam tráfego na rede para obter as medições desejadas
+        * Envio de Sondas entre os "pontos" usados na medição;
+      * Passiva:
+        * Coleta informações do tráfego passante por um ponto;
+        * Captura de dados gerados por outros usuários e aplicações e não pelo processo de medição
+
+#### Modelo de Camadas
+  * Modelo de referência em camadas
+     * Abstrações para ocultar a complexidade
+     * Definição de interfaces e serviços
+     * Padronização
+   * Objetivos do Modelo OSI ( Open System Interconnection )
+     * Definir um esquema conceitual que permita o trabalho ser desenvolvido de forma produtiva e independente para cada uma das camadas;
+     * DIZER O QUE FAZER E NÃO COMO FAZER;
+       * Explicitar o que cada camada deve fazer;
+     * Modelo de Camadas do ISO/OSI
+       * Aplicação
+       * Apresentação
+       * Sessão
+       * Transporte
+       * Rede
+       * Enlace
+       * Fisica
+    
+      * Responsável pela transmissão e representação dos bits através de um canal de comunicação
+
+       #### Camada Fisica
+        * Responsável pela transmissão e representação dos bits através de um canal de comunicação
+          * nível elétrico, mecânicas, duração do sinal, codificação
+          * Definir a forma e o nível dos pulsos óticos em uma rede com fibra ótica
+          * Definir a mecânica dos conectores e função de cada circuito do conector
+          * Nível físico não deve se preocupar com os possíveis erros de transmissão;
+        * Unidade de transmissão: bits
+        * Ex. de padrões do nível físico: EIA-232-F (antigo RS-232), ITU X.21, V.90
+        * Dispositivo de rede: Repetidor, Hub
+        * 
+      #### Camada Enlace
+      #### Camada Rede
+      #### Camada Transporte
+      #### Camada Sessão
+      #### Camada Apresentação
+      #### Camada Aplicaçao
