@@ -39,8 +39,17 @@
     * = SEM TETO 6.264,000 segundos
     * = TETO 6.280,000 segundos
 
-2. Considere um enlace ponto a ponto de 50 km de comprimento. A que largura de banda seria o atraso de propagação (a uma velocidade de 2 x 10 8 m/s) igual ao atraso de transmissão para pacotes de 100 bytes? E para pacotes de 512 bytes?
-    * RTT = ((50 * 10^3 ) / 2*10^8) 
+2. Considere um enlace ponto a ponto de 50 km de comprimento. A que largura de banda seria o atraso de propagação (a uma velocidade de 2 x 10^8 m/s) igual ao atraso de transmissão para pacotes de 100 bytes? E para pacotes de 512 bytes?
+    * propagação = ((50 * 10^3)/(2 x 10^8))
+          * 0.250 s
+    * Resposta 100 bytes
+      * trasmissao = (100 * 8)/ x = 0.250
+          *  x = 800 * 0.25
+          *  x = 3200bips       
+    * Resposta 512 bytes
+      * trasmissao = (512 * 8)/ x = 0.250
+          *  x = 4096 * 0.25
+          *  x = 16384bips       
 
 
 3. Suponha um enlace ponto a ponto de 128 Kbps é estabelecido entre a Terra e Marte. A distância entre a Terra e Marte é de aproximadamente 55 Gm (quando estão mais próximos), e os dados viajam pelo enlace à velocidade da luz – 3 x 10 8 m/s.
@@ -48,12 +57,12 @@
 * A ) Calcule o RTT mínimo para o enlace =  
     * RTT = Distancia/Velocidade
     * RTT = 2 * ((55  * 10^9 )/( 3 * 10^8))
-    * = 366.666,6666 segundos
+    * = 366.666 segundos
 
 
 * B) Calcule o produto delay x bandwidth para o enlace
-    * 
-    *
+   * total = segundos * largura de banda
+     * ((366.666 * (128 *10^3))/8)/2^20 = 5.5948791503Mebytes
 
 
 * C) Se uma câmera tira fotos de tamanho 5MB em Marte e as envia à Terra, quanto tempo demora para a foto chegar a Terra após ser tirada?
