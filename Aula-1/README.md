@@ -399,7 +399,7 @@
           * Definir a mecânica dos conectores e função de cada circuito do conector
           * Nível físico não deve se preocupar com os possíveis erros de transmissão;
         * Unidade de transmissão: bits
-        * Ex. de padrões do nível físico: EIA-232-F (antigo RS-232), ITU X.21, V.90
+        * Ex. de padrões do nível físico: EIA-232-F (antigo RS-232), ITU X.21, V.90, PHY
         * Dispositivo de rede: Repetidor, Hub
        
       #### Camada Enlace
@@ -409,7 +409,7 @@
           * Empacotamento de dados em quadros (frames) dentro da rede;
           * Controlar o acesso ao meio em redes locais;
         * Unidade de transmissão: quadros
-        * Ex de padrões que atuam no nível de enlace: IEEE 802.3, SLIP/PPP, HDLC;
+        * Ex de padrões que atuam no nível de enlace: IEEE 802.3, SLIP/PPP, HDLC, MAC;
         * Dispositivo de rede: Switch, ponte, placa de rede;
       #### Camada Rede
         * Fornecer ao nível de transporte uma independência quanto ao encaminhamento de pacotes
@@ -443,4 +443,88 @@
       * Gerenciamento de atividades
         * Transmissão baseada em prioridade
       #### Camada Apresentação
+      * Permite interpretar o significado dos dados
+        * Representação de dados independente da plataforma: sintaxe e semântica;
+        * Transformação dos dados, formatação dos dados, conversão de códigos de caracteres (EBCDIC, ASCII, etc.);
+        * codificação de inteiro, ponto flutuante, etc.
+        * Compressão de textos, criptografia,
       #### Camada Aplicaçao
+      * Suporte a aplicações de rede
+        * Mensagens padronizadas
+        * Define uma variedade de protocolos necessários à comunicação propriamente dita;
+        * Ex: HTTP, SMTP, Telnet, FTP, DNS. 
+      * Unidade de transmissão: mensagem
+      * Dispositivo de rede: proxy
+       
+  #### Arquitetura IEEE 802
+
+    Objtivo: padrões para redes locais de computadores.
+    * O IEEE 802 definiu uma arquitetura com três camadas
+      * IEEE 802, esta entre a camada de rede e camada fisica.
+        * Rede
+          * Protocolos (802.1)
+        * Enlace(LLC)
+          * Protocolos (802.2)
+        * Enlace(MAC) 
+          * Protocolos (802.3,802.5,802.6)
+        * Fisica(PHY)
+          * Protocolos (802.3,802.5,802.6)
+      
+    * O IEEE 802 define padrões para os níveis físico e enlace do RM-OSI;
+    * RM-OSI da ISO
+      * Aplicação
+      * apresentação
+      * sessão
+      * transporte
+      * rede
+      * enlace de dados
+      * fisica
+
+  #### Arquitetura TCP/IP Arquitetura dos Protocolos
+
+    * Aplicação
+      * HTTP,SMTP,SSH,FTP,TELNET
+    * Transporte
+      * TCP,UDP
+    * Rede
+      * IP e auxiliares(ARP e ICMP)
+    * Enlace de dados
+      * Definida na 802.
+    * Fisica
+      * Definida na 802.
+ 
+  #### Encapsulamento
+
+    * Computador 1
+      * Aplicação
+      * Transporte
+      * Rede
+      * Enlace de dados
+      * Fisica
+  
+    * Roteador 1
+      * Rede
+      * Enlace
+      * Física
+
+    * Roteador 2
+      * Rede
+      * Enlace
+      * Física
+
+    * Computador 2
+      * Aplicação
+      * Transporte
+      * Rede
+      * Enlace de dados
+      * Fisica
+
+  #### Comparação OSI x TCP/IP
+    * Aplicação TCP/IP e OSI
+      * Apresentação OSI
+      * Sessão OSI
+    * Transporte TCP/IP e OSI
+    * Rede TCP/IP e OSI
+    * Fisica TCP/IP
+      * Enlace de dados OSI
+      * Fisica OSI
