@@ -401,10 +401,46 @@
         * Unidade de transmissão: bits
         * Ex. de padrões do nível físico: EIA-232-F (antigo RS-232), ITU X.21, V.90
         * Dispositivo de rede: Repetidor, Hub
-        * 
+       
       #### Camada Enlace
+        * Transferência de dados entre elementos de rede vizinhos
+          * Transformar o meio de comunicação bruto numa linha livre de erros de transmissão;
+          * Detectar e opcionalmente corrigir erros de transmissão no nível físico;
+          * Empacotamento de dados em quadros (frames) dentro da rede;
+          * Controlar o acesso ao meio em redes locais;
+        * Unidade de transmissão: quadros
+        * Ex de padrões que atuam no nível de enlace: IEEE 802.3, SLIP/PPP, HDLC;
+        * Dispositivo de rede: Switch, ponte, placa de rede;
       #### Camada Rede
+        * Fornecer ao nível de transporte uma independência quanto ao encaminhamento de pacotes
+        * Roteamento através de redes diferentes
+          * Define método de endereçamento global;
+          * Algoritmos de roteamento
+        * Categoria de Serviços:
+          * Datagrama (não orientado a conexão)
+          * Circuito Virtual (orientado a conexão)
+        * Unidade de transmissão: Datagramas ou pacotes(mesma coisa)
+        * Ex: X.25, IP, IPX;
+        * Dispositivo de rede: Roteador
+  
       #### Camada Transporte
+      * Comunicação fim a fim: entre processos
+      * A camada de transporte pode, ou não, oferecer confiabilidade na transmissão dos pacotes;
+      * Oferece serviços:
+        * Orientado a conexão
+          * Controle de fluxo fim a fim;
+          * Controle de sequência fim a fim
+          * Detecção e recuperação de erros fim a fim;
+          * Ex: TCP
+        * Não orientado a conexão.
+          * Ex: UDP
       #### Camada Sessão
+      * Comunicação com controle de estado.
+      * Permite que aplicações em diferentes máquinas estabeleçam uma sessão de comunicação entre si
+      * Autenticação
+      * Sincronização do diálogo:
+         * Exemplo: transferência de arquivos, após interrupção, reatar a comunicação a partir de onde arou;
+      * Gerenciamento de atividades
+        * Transmissão baseada em prioridade
       #### Camada Apresentação
       #### Camada Aplicaçao
