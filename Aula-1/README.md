@@ -120,3 +120,147 @@
       * Satelites
       * WifiMax
     
+#### Estrutura da Rede: Núcleo da Rede
+    
+* Uma manha de roateadores interconectados
+
+  ### Como os dados são transferidos pela rede?
+    #### Comutação de Circuito
+    * Circuito dedicado
+      * Sem compartilhamento de conexão
+      * Redes Telefonicas
+    * Apenas um Circuito alocado para cada conexão
+      * Recursos fim a fim são reservados como a banda do enlace e a capacidade do comutador.
+    * Seu desempenho e garantido (como em um circuito físico)
+    * necessita estabelecer conexão previamente, alem de ter que realizar mantenção do estado
+      * mecanismo complexo
+    * Sua banda e dividia e fatia assim como os outro recursos.
+      * E alocadas em chamadas de circuito
+    * Uma fatia ficara ociosa se o dono não utilizala, sem compartilhamento
+    * Suporta poucos usuarios.
+    * Adivisão das fatias são realizadas por MULTIPLIXAÇÂO
+      * Divisão de Frequência = FDM (Frequency-Division Multiplexing)
+        * Divide em canais
+      * Divisão de Tempo = TDM (Time-Division Multiplexing)
+        * Divide em blocos de tempo
+    * 
+
+    #### Comutação de Pacotes
+    * Armazena e encaminha a mensagem.
+      * Os dados quebrados e adicionados em envelopes chamdos de pacotes, estes são encaminhados. 
+        * Ex: Internet.
+    * Cada fluxo de dado fim a fim e divido em pacotes.
+      * Pacotes dos usuários compartilham recusos da rede
+        * Processamento, largura de banda etc
+      * A rede não conhece a conexão nem mesmo toma parte dela
+      * recusos são utilizados sobre demanda.
+    * Disputa por recusos
+      * a demanda total dos recusos pode superar a quantidade disponivel
+      * congestionamento de pacotes pelo infileiramento, esperando para usar o enlace.
+      * armazena e retrasmite pacotes se deslocam uma etapa (hop) por vez
+        * trasmite num enlace
+        * espera a vez no próximo enlace
+    * Simples porém eficiente
+
+    #### Comutação de Pacotes: Miltiplexação estatística
+    * Divisão de tempo dor demanda
+      * cada pacote usa toda a banda do canal
+    * estabelece enlace com base em cada pacote
+    * pacotes de diferentes origns intercalados no enlace
+    * coloca em buffer os pacotes que estão disputando o enlace
+      * O tamannho do pacote é limitado para evitar monopólio.
+    * O estouro do buffer(fila) é chamada de congestionemnto
+    
+    #### Comutação de Pacotes: Armazena e repassa
+    * Tambem conhecida como "store ond forward", e a tecnica da comutação de pacotes que armazena e repassa o pacote.
+    
+    * Quebra uma mensagem em pedaçoes menores
+    
+    * Store-and-forward nesta tecnica o comutador espera a chegada do pacote completo e o encaminha/roteia para o próximo comutador
+  
+    #### Segmentação de Mensagens e Desempenho
+    * Sem segmentação:
+      * cada mensagem precisa ser armazenada completamente em cada comutador antes de ser retrasmitida
+      * longa espera em cada comutador
+      * Uso sequencial dos componentes da rede
+        * desperdício de recursos
+        * Ex: 5s para trasmitir entao se tivermos 3 hops teremos 3x o atraso.
+    * Com segmentação:
+      * Cada componente da rede pode "trabalhar" em paralelo em pacotes diferentes da mensgens
+      * Resulta em um menor tempo de atraso total de transmissão da mensagem
+
+    #### Comutação de pacotes x Comutação de circuitos
+    * Comutação de pacotes permite que mais usúarios usem a rede!
+      * Enlace de 1 Mbit/s
+      * cada usuário:
+        * 100Kbls quando "ativo"
+        * ativo 10% do tempo
+
+  
+    * Comutação por circuito
+      * 10 usuários
+  
+    * Comutação por pacotes
+      * com 35 usuários, probabilidade de num ativo >10 é menor que 0,004.
+
+    * A Comutação de pacotes é sempre mais vantajosa?
+      * Otima para dados em surtos/rajadas
+      * compartilhamento dos recursos
+      * não necessita estabelecimento de conexão
+      * Congestionemento excessivo
+        * atraso e perda de pacotes
+        * neessita de protocolos para transferência confiavel de dados, controle de congestionemnto
+      * Como fornecer um comportamento do tipo Circuito?
+        * São necessárias garantias de banda para aplicações de áudio e vídeo.
+        *  ainda é umm problema não resolvido!
+    #### Comutação de pacotes x comutação de circuitos
+    * Roteamento
+      * determina a rota origem-destino tomada pelos pacotes
+      * algoritmos de roteamento
+        * IGP
+          * RIP, SIS
+        * EGP
+          * BGP
+      * Com os algoritmos temos as tabelas de Repasse dos roteadores
+        * A funçao de repasse move pacotes da entrada do roteador para a saída apropriada do roteado.
+          * Endereço do destino no cabeçalho do pacote entrante.
+
+#### Métricas de Desempenho
+* Latência ou atraso
+  * Tempo dos pacotes
+* Produto retardo x largura de banda
+  * Largura dos canais
+* Atraso de enfileiramento
+  * Quando chega nos roteadores congestionado
+* Perda de pacotes
+  * pode ser ate por congestionamento ou por erro na comunicação
+* Vazão (Throughput)
+  * Quantidade de dados que consegue fluir em uma rede espefica sua metríca maxima de bits (produto final sia vazão)
+
+### Porque aprender as Métricas
+   * Conhecer as características da rede:
+     * Estimar parâmetros para protocolos 
+     * Melhorar a QoS das aplicaçẽs multimídia;
+     * Criar modelo mais precisos
+     * Provisionamento de canais.
+
+    
+
+  #### Medidas de desempenho
+
+  * O desempenho de uma rede pode ser medida de duas formas principais.
+    * Latência (ou atraso, em unidade de tempo)
+      * tempo para enviar mensagem do ponto A ao ponto B
+      * somente ida ou ida e volta (RTT- round-trip time)
+    * Vazão(Throughput) - em bits por segundo
+      * Vazão é a taxa de bits efetivamente transportada
+      * Largura de banda é a taxa máxima de bits que um meio físico pode transmitir em uma unidade de tempo (taxa de transmissão) 
+        * Largura de banda ou banda de um canal pode ser dada em Hz ou bits/segundos
+
+  #### Quanto vale um Mega?
+  * Mega = 2 20 ou 10 6 ?
+     | Unidades    | Base Bits Armazenamento | Base Bits Taxa de Transferência |
+    |--- |  ---  | --- |
+    | KB |   2^10 | 10^6
+    | MEGA | 2^20  | 10^7  |
+    |GIGA |  2^30 | 10^8  
