@@ -89,52 +89,86 @@
 5. Calcule a latência (do primeiro bit enviado até p último bit recebido) para:
 
 * A) Um enlace Ethernet de 1 Gbps com um único switch store-and-forward no caminho, e pacote de tamanho 5.000 bits. Suponha que cada enlace introduz um atraso de propagação de 10 ms e que o switch começa a retransmissão imediatamente após ele ter acabado de receber o pacote (i.e., não há atraso de espera na fila nem de processamento).
-
+    * = 0.010 + (5000/10^9)
+    * = 10.005
 * B) O mesmo que (a) mas com 3 switches.
 
 * C) Mesmo que (b), mas suponha que o switch é implementado com cut-through, ou seja, ele é capaz de começar a retransmitir o pacote após ter recebido os primeiros 128 bits do pacote.
 
 
-6. Discuta as necessidades de desempenho relativas das seguintes aplicações, em termos de largura de banda média, largura de banda máxima (pico), latência, jitter e tolerância a perdas:
+1. Discuta as necessidades de desempenho relativas das seguintes aplicações, em termos de largura de banda média, largura de banda máxima (pico), latência, jitter e tolerância a perdas:
 * A) Servidor de arquivos
-    * Largura de Banda Média = 
+    * Largura de Banda Média =
+      *  Funciona bem, podemos abrir varias conexões.
     * Largura de Banda Máxima =
+      *  Condiçõe perfeita rapido download ou upload
     * Latência =
+      *  Grande problema a latência influência no tempo do dowload diretamente proporcional  
     * Jitter = 
+      * A variação na chega dos pacotes não influência tanto no produto final do download ou upload 
     * Tolerância a perdas = 
+      * Bem não suporta perdas de dados, se isso ocorrer o arquivo provavelmente vai ser corompido por este motivo ele 
+     
 * B) Servidor de impressão
     * Largura de Banda Média = 
+      * Funciona bem.
     * Largura de Banda Máxima =
+      * Funciona consideravelmente bem.
     * Latência =
-    * Jitter = 
-    * Tolerância a perdas = 
+      * O atraso na chegada dos dados não e tão relevantes desde que chegem
+    * Jitter =
+      * A variação da chega dos pacotes não é tão relevante  
+    * Tolerância a perdas =
+      * Não suporta perda de dados.
+
 * C) Biblioteca digital
     * Largura de Banda Média = 
+      * Funciona adequadamente pode ser que demore um pouco.
     * Largura de Banda Máxima =
+      * Funcio em condições melhores.
     * Latência =
+      * A demora da rede pode ser ruim porém dificilmente vai ocorrer erro por este motivo.
     * Jitter = 
-    * Tolerância a perdas = 
+      * A variação na rede não prejudica o dowloand o livro
+    * Tolerância a perdas =
+      * Não permite perca de pacotes porque causara erro no livro digital.
+  
 * D) Monitoramento de instrumentos meteorológicos remotos.
-    * Largura de Banda Média = 
+    * Largura de Banda Média =  
+      * Os dados chegaram normalmente
     * Largura de Banda Máxima =
+      * Chegaram normalmente porém mais rapido.
     * Latência =
+      * Os atrasos porem ser ruim porem os dados meteorolícos geralmente são de grande esços temporais.
     * Jitter = 
+      * Variação na chegada dos dados não acarreta erro ou problemas
     * Tolerância a perdas = 
+      * A perca de dados não é agradavel porque tornara inconsistente a previção e o processo certamente tera que ser refeito.
 * E) Voz
     * Largura de Banda Média = 
+      * Funciona apessar de poder reduzir a qualidade da voz.
     * Largura de Banda Máxima =
+      * Funciona perfeitamente e a qualidade é boa.
     * Latência =
+      * Prejudica drasticamente o desempenho do sistema de voz, alguns só funcionan com um limite minimo de latência.
     * Jitter = 
-    * Tolerância a perdas = 
+      * Pode prejudicar a qualidade da voz uma vez que a variação na chegada acaba tendo que ser descartado
+    * Tolerância a perdas =
+      * Alguns sistemas de voz utilizam pacotes proximos caso algum se perca 
 * F) Difusão de televisão
     * Largura de Banda Média = 
+      * Qualidade dos pixes com baixa resolução
     * Largura de Banda Máxima =
+      * Qualidade com bom desempenho
     * Latência =
+      * Sistemas de necesstam de uma latencia baixa senao nem são executados. 
     * Jitter = 
+      * Os sistemas utilizam buffers, porém pacotes muito atraso nem são aceitos.
     * Tolerância a perdas = 
+      * Não é tolerante a perca porém funciona! Existe alguns metodos para substituir a imagem por uma proxima ou por um quadro mais recente.
 
 
-7. Relacione as colunas:
+1. Relacione as colunas:
 
     |Opçoes | Alternativa    | Camada |
     |--- |  ---  | --- |
