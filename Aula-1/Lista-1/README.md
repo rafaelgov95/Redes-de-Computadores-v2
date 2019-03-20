@@ -6,9 +6,9 @@
  
      | Unidades    | Base Bits Armazenamento | Base Bits Taxa de Transferência |
     |--- |  ---  | --- |
-    | KB |   2^10 | 10^6
-    | MEGA | 2^20  | 10^7  |
-    |GIGA |  2^30 | 10^8
+    | KB |   2^10 | 10^3
+    | MEGA | 2^20  | 10^6  |
+    |GIGA |  2^30 | 10^9
 
 ## Exercícios
 1. Calcule o tempo total requerido para transferir um arquivo de 1,5 MB nos seguintes casos, assumindo um RTT de 80 ms, pacote de dados de tamanho 1KB, e um handshakin (estabelecimento da conexão) inicial de 2 x RTT, antes do envio dos dados.
@@ -92,11 +92,12 @@
     * = 0.010 + (5000/10^9)
     * = 10.005
 * B) O mesmo que (a) mas com 3 switches.
-
+    * = 3 * 0.010 + (5000/10^9)
+    * = 0.030005
 * C) Mesmo que (b), mas suponha que o switch é implementado com cut-through, ou seja, ele é capaz de começar a retransmitir o pacote após ter recebido os primeiros 128 bits do pacote.
 
 
-1. Discuta as necessidades de desempenho relativas das seguintes aplicações, em termos de largura de banda média, largura de banda máxima (pico), latência, jitter e tolerância a perdas:
+6. Discuta as necessidades de desempenho relativas das seguintes aplicações, em termos de largura de banda média, largura de banda máxima (pico), latência, jitter e tolerância a perdas:
 * A) Servidor de arquivos
     * Largura de Banda Média =
       *  Funciona bem, podemos abrir varias conexões.
@@ -168,7 +169,7 @@
       * Não é tolerante a perca porém funciona! Existe alguns metodos para substituir a imagem por uma proxima ou por um quadro mais recente.
 
 
-1. Relacione as colunas:
+7. Relacione as colunas:
 
     |Opçoes | Alternativa    | Camada |
     |--- |  ---  | --- |
