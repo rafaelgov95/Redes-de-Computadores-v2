@@ -1,5 +1,4 @@
 
-
 ## Como ler um PaPel
 
 #### Resumo: How to Read a Paper - S. Keshav
