@@ -36,14 +36,16 @@
 #include "util.h"
 #include "model.pb.h"
 
-#define MAX_LENGTH 360
+#define MAX_LENGTH_DATAG 351
+#define MAX_LENGTH_FILE 340
+
 
 class Leecher {
 
 private:
     int socket_fd, bytes_read,total_bytes_file,rastreadorPorta = 8080;
     unsigned int address_length;
-    char recieve_data[MAX_LENGTH];
+    char recieve_data[MAX_LENGTH_DATAG];
     struct sockaddr_in rastreador_address;
     std::vector<std::pair<std::string, std::vector<std::string>>> tableFiles;
 

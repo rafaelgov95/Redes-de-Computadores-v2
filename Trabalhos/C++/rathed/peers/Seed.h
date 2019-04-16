@@ -24,8 +24,8 @@
 #include "util.h"
 #include <unistd.h>
 
-#define MAX_LENGTH 360
-
+#define MAX_LENGTH_DATAG 360
+#define MAX_LENGTH_FILE 350
 
 class Seed {
 
@@ -37,7 +37,7 @@ private:
     int numfd = 1;
     int socket_fd, bytes_read,bytes_total;
     unsigned int address_length;
-    char recieve_data[MAX_LENGTH - 20], send_data[MAX_LENGTH - 20];
+    char recieve_data[MAX_LENGTH_DATAG], send_data[MAX_LENGTH_FILE];
     struct sockaddr_in server_address, client_address,rastreador_address;
     std::vector<std::pair<std::string,std::string>> file;
     void run();
@@ -47,6 +47,7 @@ private:
     void atualizacaoRealizada(rathed::Datagrama data);
     void consultaFileSize(rathed::Datagrama data);
     void confirmaEnvio(rathed::Datagrama *datagrama);
+    void Desconectar();
 public:
     Seed(int porta);
     ~Seed();
