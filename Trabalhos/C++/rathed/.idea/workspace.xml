@@ -12,17 +12,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2287bb4b-7650-4081-b910-3dae6e5019b5" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/rathed.dir/main.cpp.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/rathed.dir/peers/Seed.cpp.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/rathed.dir/rastreador/Rastreador.cpp.o" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/peers/Seed.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/peers/Seed.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/peers/Seed.h" beforeDir="false" afterPath="$PROJECT_DIR$/peers/Seed.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../rathed_leecher/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../rathed_leecher/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../rathed_leecher/cmake-build-debug/CMakeFiles/rathed_leecher.dir/main.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/../rathed_leecher/cmake-build-debug/CMakeFiles/rathed_leecher.dir/main.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../rathed_leecher/cmake-build-debug/CMakeFiles/rathed_leecher.dir/peers/Leecher.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/../rathed_leecher/cmake-build-debug/CMakeFiles/rathed_leecher.dir/peers/Leecher.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../rathed_leecher/cmake-build-debug/rathed_leecher" beforeDir="false" afterPath="$PROJECT_DIR$/../rathed_leecher/cmake-build-debug/rathed_leecher" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../rathed_leecher/peers/Leecher.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../rathed_leecher/peers/Leecher.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../rathed_leecher/peers/Leecher.h" beforeDir="false" afterPath="$PROJECT_DIR$/../rathed_leecher/peers/Leecher.h" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -40,8 +31,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/peers/Seed.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="290">
-              <caret line="49" column="13" selection-start-line="49" selection-end-line="50" />
+            <state relative-caret-position="112">
+              <caret line="43" column="22" lean-forward="true" selection-start-line="43" selection-start-column="22" selection-end-line="43" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -49,8 +40,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/peers/Seed.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="487">
-              <caret line="150" column="50" selection-start-line="150" selection-start-column="50" selection-end-line="150" selection-end-column="50" />
+            <state relative-caret-position="230">
+              <caret line="52" lean-forward="true" selection-start-line="52" selection-end-line="52" />
               <folding>
                 <element signature="e#78#99#0" expanded="true" />
               </folding>
@@ -319,12 +310,12 @@
       <workItem from="1555350721143" duration="10450000" />
       <workItem from="1555381738115" duration="1656000" />
       <workItem from="1555385958172" duration="11800000" />
-      <workItem from="1555414187995" duration="11368000" />
+      <workItem from="1555414187995" duration="11525000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="209220000" />
+    <option name="totallyTimeSpent" value="209377000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -671,15 +662,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/peers/Seed.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="290">
-          <caret line="49" column="13" selection-start-line="49" selection-end-line="50" />
+        <state relative-caret-position="112">
+          <caret line="43" column="22" lean-forward="true" selection-start-line="43" selection-start-column="22" selection-end-line="43" selection-end-column="22" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/peers/Seed.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="487">
-          <caret line="150" column="50" selection-start-line="150" selection-start-column="50" selection-end-line="150" selection-end-column="50" />
+        <state relative-caret-position="230">
+          <caret line="52" lean-forward="true" selection-start-line="52" selection-end-line="52" />
           <folding>
             <element signature="e#78#99#0" expanded="true" />
           </folding>

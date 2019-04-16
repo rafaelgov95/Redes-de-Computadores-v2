@@ -53,7 +53,7 @@ void Seed::run() {
 
     address_length = sizeof(struct sockaddr); //tamanh do endereco ipv4
 
-    atualizarRastreador("cc72fc24056ced9ce13a287ca1243d48");
+    atualizarRastreador("cc72fc24056ced9ce13a287ca1243d48","/home/rafael/Música/EU-NUNCA-ESTOU-SO.mp3");
 
     while (1) {
         readfds = socketoriginal;
@@ -146,39 +146,11 @@ void Seed::EnviarArquivo(rathed::Datagrama data) {
 }
 
 
-void Seed::confirmaEnvio(rathed::Datagrama *datagrama) {
-    bool confirma_send = true;
-    std::cout << "Executando Confirma Envio" << std::endl;
 
-    while (confirma_send) {
-        bytes_read = recvfrom(socket_fd, recieve_data, MAX_LENGTH_DATAG, 0, (struct sockaddr *) &client_address,
-                              &address_length); //block call, will wait till client enters something, before proceeding
-        usleep(200);
-        rathed::Datagrama buf;
-        buf.ParseFromArray(recieve_data, bytes_read);
-        std::cout << "Recebeu Confirma Envio: " << buf.type() << " " << buf.data() << " " << datagrama->packnumber()
-                  << " " << buf.packnumber() << std::endl;
-
-        if (buf.type() == 1 && buf.packnumber() == datagrama->packnumber()) {
-            std::cout << "Confirmo Envio" << std::endl;
-            if (sendto(socket_fd, DataGramaSerial(buf), buf.ByteSizeLong(), 0,
-                       (struct sockaddr *) &client_address,
-                       sizeof(struct sockaddr)) > 0) {
-                confirma_send = false;
-            }
-            usleep(200);
-
-        }
-        std::cout << "TESTE" << std::endl;
-
-    }
-
-}
-
-void Seed::atualizarRastreador(std::string hash) {
+void Seed::atualizarRastreador(std::string hash,std::string path) {
     std::cout << "atualizarRastreador Seed: " << std::endl;
     std::pair<std::string, std::string> arquivo = std::make_pair(hash,
-                                                                 "/home/rafael/Música/EU-NUNCA-ESTOU-SO.mp3");
+                                                                 path);
     file.push_back(arquivo);
 
     rathed::Datagrama _data = DataGrama(4, arquivo.second.size(), arquivo.first);
@@ -199,20 +171,3 @@ void Seed::Desconectar() {
     std::cout << "User desconectado" << std::endl;
 
 }
-
-//while ((bytes_read = read(fd_arq, recieve_data, MAX_LENGTH)) > 0) {
-//datagrama.set_type(static_cast<rathed::DatagramaType>(1));
-//datagrama.set_packnumber(data.packnumber());
-//datagrama.set_data(recieve_data, bytes_read);
-//size_t size = datagrama.ByteSizeLong();
-//void *buffer = malloc(size);
-//datagrama.SerializeToArray(buffer, size);
-//sendto(socket_fd, buffer, size, 0, (struct sockaddr *) &client_address, sizeof(client_address));
-//total_bytes_read += bytes_read;
-//total_bytes += size;
-//std::cout << "Enviado Total de Pacotes: " << total_bytes << std::endl;
-//std::cout << "Enviado Total de Pacotes DATA: " << total_bytes_read << std::endl;
-////            confirmaEnvio(&datagrama);
-//usleep(200);
-//}
-

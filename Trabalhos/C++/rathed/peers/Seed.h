@@ -41,7 +41,7 @@ private:
     struct sockaddr_in server_address, client_address,rastreador_address;
     std::vector<std::pair<std::string,std::string>> file;
     void run();
-   void atualizarRastreador( std::string hash);
+   void atualizarRastreador( std::string hash,std::string path);
     void tratarMensagem(rathed::Datagrama data);
     void EnviarArquivo(rathed::Datagrama data);
     void atualizacaoRealizada(rathed::Datagrama data);
