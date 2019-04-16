@@ -35,27 +35,30 @@
 #include "thread"
 #include "util.h"
 #include "model.pb.h"
-#define MAX_LENGTH 160
+
+#define MAX_LENGTH 360
 
 class Leecher {
 
 private:
-    int rastreadorPorta=8080;
-    fd_set socketoriginal;
-    fd_set readfds;
-    struct timeval tv;
-    int numfd = 1;
-    int socket_fd, bytes_read;
+    int socket_fd, bytes_read,total_bytes_file,rastreadorPorta = 8080;
     unsigned int address_length;
-    char recieve_data[MAX_LENGTH], send_data[MAX_LENGTH];
-    struct sockaddr_in server_address, client_address,rastreador_address;
-    std::vector<std::pair<std::string,std::vector<std::string>>> tableFiles;
-    void run();
-    void responseP2P( rathed::Datagrama data);
-    void baixar();
-    void consultarRastreador();
+    char recieve_data[MAX_LENGTH];
+    struct sockaddr_in rastreador_address;
+    std::vector<std::pair<std::string, std::vector<std::string>>> tableFiles;
+
 public:
-   Leecher(int porta);
+    Leecher();
+
+    ~Leecher();
+
+    void run(std::string hash, std::string path);
+
+    void downloandP2P(sockaddr_in seed_address,std::string path,std::string hash);
+
+    bool consultarFileSize(std::string hash, sockaddr_in seed);
+
+    std::vector<std::string> consultarRastreador(std::string hash);
 
 };
 

@@ -24,7 +24,7 @@
 #include "util.h"
 #include <unistd.h>
 
-#define MAX_LENGTH 100
+#define MAX_LENGTH 360
 
 
 class Seed {
@@ -35,17 +35,18 @@ private:
     fd_set readfds;
     struct timeval tv;
     int numfd = 1;
-    int socket_fd, bytes_read;
+    int socket_fd, bytes_read,bytes_total;
     unsigned int address_length;
-    char recieve_data[100], send_data[100];
+    char recieve_data[MAX_LENGTH - 20], send_data[MAX_LENGTH - 20];
     struct sockaddr_in server_address, client_address,rastreador_address;
     std::vector<std::pair<std::string,std::string>> file;
     void run();
-    void atualizarRastreador();
+   void atualizarRastreador( std::string hash);
     void tratarMensagem(rathed::Datagrama data);
     void EnviarArquivo(rathed::Datagrama data);
     void atualizacaoRealizada(rathed::Datagrama data);
-    void consultaFile(std::string hash);
+    void consultaFileSize(rathed::Datagrama data);
+    void confirmaEnvio(rathed::Datagrama *datagrama);
 public:
     Seed(int porta);
     ~Seed();

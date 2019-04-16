@@ -177,33 +177,6 @@ model/model.pb.cc.s:
 	$(MAKE) -f CMakeFiles/rathed.dir/build.make CMakeFiles/rathed.dir/model/model.pb.cc.s
 .PHONY : model/model.pb.cc.s
 
-peers/Leecher.o: peers/Leecher.cpp.o
-
-.PHONY : peers/Leecher.o
-
-# target to build an object file
-peers/Leecher.cpp.o:
-	$(MAKE) -f CMakeFiles/rathed.dir/build.make CMakeFiles/rathed.dir/peers/Leecher.cpp.o
-.PHONY : peers/Leecher.cpp.o
-
-peers/Leecher.i: peers/Leecher.cpp.i
-
-.PHONY : peers/Leecher.i
-
-# target to preprocess a source file
-peers/Leecher.cpp.i:
-	$(MAKE) -f CMakeFiles/rathed.dir/build.make CMakeFiles/rathed.dir/peers/Leecher.cpp.i
-.PHONY : peers/Leecher.cpp.i
-
-peers/Leecher.s: peers/Leecher.cpp.s
-
-.PHONY : peers/Leecher.s
-
-# target to generate assembly for a file
-peers/Leecher.cpp.s:
-	$(MAKE) -f CMakeFiles/rathed.dir/build.make CMakeFiles/rathed.dir/peers/Leecher.cpp.s
-.PHONY : peers/Leecher.cpp.s
-
 peers/Seed.o: peers/Seed.cpp.o
 
 .PHONY : peers/Seed.o
@@ -273,9 +246,6 @@ help:
 	@echo "... model/model.pb.o"
 	@echo "... model/model.pb.i"
 	@echo "... model/model.pb.s"
-	@echo "... peers/Leecher.o"
-	@echo "... peers/Leecher.i"
-	@echo "... peers/Leecher.s"
 	@echo "... peers/Seed.o"
 	@echo "... peers/Seed.i"
 	@echo "... peers/Seed.s"

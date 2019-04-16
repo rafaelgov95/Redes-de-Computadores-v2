@@ -83,22 +83,9 @@ CMakeFiles/rathed.dir/peers/Seed.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/rathed.dir/peers/Seed.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/rafael/Documentos/Mestrado/Materias/Redes-de-Computadores-v2/Trabalhos/C++/rathed/peers/Seed.cpp -o CMakeFiles/rathed.dir/peers/Seed.cpp.s
 
-CMakeFiles/rathed.dir/peers/Leecher.cpp.o: CMakeFiles/rathed.dir/flags.make
-CMakeFiles/rathed.dir/peers/Leecher.cpp.o: ../peers/Leecher.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/rafael/Documentos/Mestrado/Materias/Redes-de-Computadores-v2/Trabalhos/C++/rathed/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/rathed.dir/peers/Leecher.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/rathed.dir/peers/Leecher.cpp.o -c /home/rafael/Documentos/Mestrado/Materias/Redes-de-Computadores-v2/Trabalhos/C++/rathed/peers/Leecher.cpp
-
-CMakeFiles/rathed.dir/peers/Leecher.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/rathed.dir/peers/Leecher.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/rafael/Documentos/Mestrado/Materias/Redes-de-Computadores-v2/Trabalhos/C++/rathed/peers/Leecher.cpp > CMakeFiles/rathed.dir/peers/Leecher.cpp.i
-
-CMakeFiles/rathed.dir/peers/Leecher.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/rathed.dir/peers/Leecher.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/rafael/Documentos/Mestrado/Materias/Redes-de-Computadores-v2/Trabalhos/C++/rathed/peers/Leecher.cpp -o CMakeFiles/rathed.dir/peers/Leecher.cpp.s
-
 CMakeFiles/rathed.dir/rastreador/Rastreador.cpp.o: CMakeFiles/rathed.dir/flags.make
 CMakeFiles/rathed.dir/rastreador/Rastreador.cpp.o: ../rastreador/Rastreador.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/rafael/Documentos/Mestrado/Materias/Redes-de-Computadores-v2/Trabalhos/C++/rathed/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/rathed.dir/rastreador/Rastreador.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/rafael/Documentos/Mestrado/Materias/Redes-de-Computadores-v2/Trabalhos/C++/rathed/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/rathed.dir/rastreador/Rastreador.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/rathed.dir/rastreador/Rastreador.cpp.o -c /home/rafael/Documentos/Mestrado/Materias/Redes-de-Computadores-v2/Trabalhos/C++/rathed/rastreador/Rastreador.cpp
 
 CMakeFiles/rathed.dir/rastreador/Rastreador.cpp.i: cmake_force
@@ -111,7 +98,7 @@ CMakeFiles/rathed.dir/rastreador/Rastreador.cpp.s: cmake_force
 
 CMakeFiles/rathed.dir/model/model.pb.cc.o: CMakeFiles/rathed.dir/flags.make
 CMakeFiles/rathed.dir/model/model.pb.cc.o: ../model/model.pb.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/rafael/Documentos/Mestrado/Materias/Redes-de-Computadores-v2/Trabalhos/C++/rathed/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/rathed.dir/model/model.pb.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/rafael/Documentos/Mestrado/Materias/Redes-de-Computadores-v2/Trabalhos/C++/rathed/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/rathed.dir/model/model.pb.cc.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/rathed.dir/model/model.pb.cc.o -c /home/rafael/Documentos/Mestrado/Materias/Redes-de-Computadores-v2/Trabalhos/C++/rathed/model/model.pb.cc
 
 CMakeFiles/rathed.dir/model/model.pb.cc.i: cmake_force
@@ -126,7 +113,6 @@ CMakeFiles/rathed.dir/model/model.pb.cc.s: cmake_force
 rathed_OBJECTS = \
 "CMakeFiles/rathed.dir/main.cpp.o" \
 "CMakeFiles/rathed.dir/peers/Seed.cpp.o" \
-"CMakeFiles/rathed.dir/peers/Leecher.cpp.o" \
 "CMakeFiles/rathed.dir/rastreador/Rastreador.cpp.o" \
 "CMakeFiles/rathed.dir/model/model.pb.cc.o"
 
@@ -135,13 +121,12 @@ rathed_EXTERNAL_OBJECTS =
 
 rathed: CMakeFiles/rathed.dir/main.cpp.o
 rathed: CMakeFiles/rathed.dir/peers/Seed.cpp.o
-rathed: CMakeFiles/rathed.dir/peers/Leecher.cpp.o
 rathed: CMakeFiles/rathed.dir/rastreador/Rastreador.cpp.o
 rathed: CMakeFiles/rathed.dir/model/model.pb.cc.o
 rathed: CMakeFiles/rathed.dir/build.make
 rathed: /usr/lib/libprotobuf.so
 rathed: CMakeFiles/rathed.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/rafael/Documentos/Mestrado/Materias/Redes-de-Computadores-v2/Trabalhos/C++/rathed/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable rathed"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/rafael/Documentos/Mestrado/Materias/Redes-de-Computadores-v2/Trabalhos/C++/rathed/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable rathed"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/rathed.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

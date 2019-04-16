@@ -10,7 +10,10 @@
 #include "Seed.h"
 #include "util.h"
 #include <ostream>
+#include <google/protobuf/io/zero_copy_stream.h>
 #include <google/protobuf/io/zero_copy_stream_impl.h>
+
+
 
 namespace io = google::protobuf::io;
 
@@ -35,7 +38,6 @@ Seed::Seed(int porta) {
     server_address.sin_family = AF_INET;
     server_address.sin_port = htons(porta);
     server_address.sin_addr.s_addr = INADDR_ANY;
-    bzero(&(client_address.sin_zero), 8);
     bzero(&(rastreador_address.sin_zero), 8);
 
     run();
@@ -52,10 +54,11 @@ void Seed::run() {
 
     address_length = sizeof(struct sockaddr); //tamanh do endereco ipv4
 
-    atualizarRastreador();
+    atualizarRastreador("cc72fc24056ced9ce13a287ca1243d48");
+
     while (1) {
         readfds = socketoriginal;
-        int recieve = select(numfd, &readfds, NULL, NULL, &tv);
+        int recieve = select(numfd+1, &readfds, NULL, NULL, &tv);
         if (recieve == -1) {
             perror("Erro select"); // erro no select()
         }
@@ -76,12 +79,10 @@ void Seed::run() {
 void Seed::tratarMensagem(rathed::Datagrama data) {
     std::cout << "Chegou: " << data.type() << std::endl;
     if (data.type() == 1) {
-
     } else if (data.type() == 2) {
         EnviarArquivo(data);
     } else if (data.type() == 3) {
-        atualizacaoRealizada(data);
-
+        consultaFileSize(data);
     } else if (data.type() == 4) {
         atualizacaoRealizada(data);
 
@@ -89,53 +90,91 @@ void Seed::tratarMensagem(rathed::Datagrama data) {
 
 }
 
-void Seed::EnviarArquivo(rathed::Datagrama data) {
-
+void Seed::consultaFileSize(rathed::Datagrama data) {
     auto it = std::find_if(file.begin(), file.end(), CompareHash(data.data()));
-
-    if (it.base() != nullptr) {
-        rathed::Datagrama datagrama;
-        int fd_arq = open("/home/rafael/Música/AlanWalker.mp3", O_RDONLY);
-//        io::ZeroCopyInputStream* raw_input = new io::FileInputStream(fd_arq);
-//        auto* coded_input = new io::CodedInputStream(raw_input);
-        // AQUI E A COISA LINDA QUE VOU FAZER
-        int total_bytes=0,total_bytes_read=0,cont_pacote=0;
-
-        while (( bytes_read = read(fd_arq,recieve_data, MAX_LENGTH )) > 0) {
-            cont_pacote++;
-            datagrama.set_type(static_cast<rathed::DatagramaType>(2));
-            datagrama.set_packnumber(cont_pacote);
-            datagrama.set_data(recieve_data,bytes_read);
-            size_t size = datagrama.ByteSizeLong();
-            void *buffer = malloc(size);
-            datagrama.SerializeToArray(buffer, size);
-            sendto(socket_fd, buffer, size, 0, (struct sockaddr *) &client_address, sizeof(client_address));
-            total_bytes_read+=bytes_read;
-            total_bytes+=size;
-            std::cout<<"Enviado Total de Pacotes: "<<total_bytes<<std::endl;
-            std::cout<<"Enviado Total de Pacotes DATA: "<<total_bytes_read<<std::endl;
-
-            usleep(200);
-        }
-        datagrama = DataGrama(2,-1,"");
-        sendto(socket_fd, DataGramaSerial(datagrama), datagrama.ByteSizeLong(), 0, (struct sockaddr *) &client_address, sizeof(client_address));
-        sleep(5);
-//        delete coded_input;
-//        delete raw_input;
-
-    } else {
-        if (sendto(socket_fd, "ERRO", sizeof("ERRO"), 0,
-                   (struct sockaddr *) &rastreador_address, sizeof(struct sockaddr)) <= 0)
+    if (it.base() != nullptr && data.packnumber() >= 0) {
+        bytes_total= fileSize(it.base()->second.c_str());
+        std::cout << "ConsultaFile Enviado Tamanho File: " << bytes_total
+                << std::endl;
+        rathed::Datagrama _data = DataGrama(1, bytes_total
+                , data.data());
+        if (sendto(socket_fd, DataGramaSerial(_data), _data.ByteSizeLong(), 0,
+                   (struct sockaddr *) &client_address, sizeof(struct sockaddr)) <= 0)
             error("Erro ao enviar");
+    } else {
+        std::cout << "Erro Enviado Tamanho File: " << std::endl;
     }
-
 
 }
 
-void Seed::atualizarRastreador() {
+void Seed::EnviarArquivo(rathed::Datagrama data) {
+    auto it = std::find_if(file.begin(), file.end(), CompareHash(data.data()));
+    rathed::Datagrama datagrama;
+
+    if (it.base() != nullptr && data.packnumber() >= 0) {
+        int fd_arq = open(it.base()->second.c_str(), O_RDONLY);
+        int total_bytes = 0, total_bytes_read = 0;
+        io::ZeroCopyInputStream *raw_input = new io::FileInputStream(fd_arq);
+        io::CodedInputStream *coded_input = new io::CodedInputStream(raw_input);
+        std::cout << "Avança Bytes: "<<data.packnumber() << std::endl;
+        coded_input->Skip(data.packnumber());
+        bytes_read = coded_input->ReadRaw(recieve_data,MAX_LENGTH-20);
+        datagrama.set_type(static_cast<rathed::DatagramaType>(1));
+        datagrama.set_packnumber(data.packnumber());
+        datagrama.set_data(recieve_data, sizeof(recieve_data));
+
+        if (sendto(socket_fd, DataGramaSerial(datagrama), datagrama.ByteSizeLong(), 0,
+                   (struct sockaddr *) &client_address, sizeof(struct sockaddr)) <= 0)
+            error("Erro ao enviar 1");
+
+        total_bytes_read += bytes_read;
+        total_bytes += datagrama.ByteSizeLong();
+        std::cout << "Total de Bytes Enviados DATA: " << total_bytes <<" "<< bytes_total << std::endl;
+        std::cout << "Enviado Total de Pacotes File: " <<  sizeof(recieve_data) << std::endl;
+        usleep(200);
+    } else {
+        if (
+                sendto(socket_fd,
+                       "ERRO", sizeof("ERRO"), 0,
+                       (struct sockaddr *) &client_address, sizeof(struct sockaddr)) <= 0)
+            error("Erro ao enviar 2");
+    }
+}
+
+
+void Seed::confirmaEnvio(rathed::Datagrama *datagrama) {
+    bool confirma_send = true;
+    std::cout << "Executando Confirma Envio" << std::endl;
+
+    while (confirma_send) {
+        bytes_read = recvfrom(socket_fd, recieve_data, MAX_LENGTH, 0, (struct sockaddr *) &client_address,
+                              &address_length); //block call, will wait till client enters something, before proceeding
+        usleep(200);
+        rathed::Datagrama buf;
+        buf.ParseFromArray(recieve_data, bytes_read);
+        std::cout << "Recebeu Confirma Envio: " << buf.type() << " " << buf.data() << " " << datagrama->packnumber()
+                  << " " << buf.packnumber() << std::endl;
+
+        if (buf.type() == 1 && buf.packnumber() == datagrama->packnumber()) {
+            std::cout << "Confirmo Envio" << std::endl;
+            if (sendto(socket_fd, DataGramaSerial(buf), buf.ByteSizeLong(), 0,
+                       (struct sockaddr *) &client_address,
+                       sizeof(struct sockaddr)) > 0) {
+                confirma_send = false;
+            }
+            usleep(200);
+
+        }
+        std::cout << "TESTE" << std::endl;
+
+    }
+
+}
+
+void Seed::atualizarRastreador(std::string hash) {
     std::cout << "atualizarRastreador Seed: " << std::endl;
-    std::pair<std::string, std::string> arquivo = std::make_pair("cc72fc24056ced9ce13a287ca1243d48",
-                                                                 "/home/rafael/Música/AlanWalker.mp3");
+    std::pair<std::string, std::string> arquivo = std::make_pair(hash,
+                                                                 "/home/rafael/Música/EU-NUNCA-ESTOU-SO.mp3");
     file.push_back(arquivo);
 
     rathed::Datagrama _data = DataGrama(4, arquivo.second.size(), arquivo.first);
@@ -151,3 +190,19 @@ void Seed::atualizacaoRealizada(rathed::Datagrama data) {
     std::cout << "TIPO: " << data.type() << "| OK |" << std::endl;
 
 }
+
+//while ((bytes_read = read(fd_arq, recieve_data, MAX_LENGTH)) > 0) {
+//datagrama.set_type(static_cast<rathed::DatagramaType>(1));
+//datagrama.set_packnumber(data.packnumber());
+//datagrama.set_data(recieve_data, bytes_read);
+//size_t size = datagrama.ByteSizeLong();
+//void *buffer = malloc(size);
+//datagrama.SerializeToArray(buffer, size);
+//sendto(socket_fd, buffer, size, 0, (struct sockaddr *) &client_address, sizeof(client_address));
+//total_bytes_read += bytes_read;
+//total_bytes += size;
+//std::cout << "Enviado Total de Pacotes: " << total_bytes << std::endl;
+//std::cout << "Enviado Total de Pacotes DATA: " << total_bytes_read << std::endl;
+////            confirmaEnvio(&datagrama);
+//usleep(200);
+//}

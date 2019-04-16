@@ -1,7 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/rathed.dir/main.cpp.o"
   "CMakeFiles/rathed.dir/peers/Seed.cpp.o"
-  "CMakeFiles/rathed.dir/peers/Leecher.cpp.o"
   "CMakeFiles/rathed.dir/rastreador/Rastreador.cpp.o"
   "CMakeFiles/rathed.dir/model/model.pb.cc.o"
   "rathed.pdb"
