@@ -12,8 +12,52 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2287bb4b-7650-4081-b910-3dae6e5019b5" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/peers/Seed.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/peers/Seed.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/peers/Seed.h" beforeDir="false" afterPath="$PROJECT_DIR$/peers/Seed.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../rathed_leecher/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../rathed_leecher/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../rathed_leecher/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../rathed_leecher/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../rathed_leecher/buttons.qrc" beforeDir="false" afterPath="$PROJECT_DIR$/../rathed_leecher/resources/buttons.qrc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../rathed_leecher/buttons/pause.png" beforeDir="false" afterPath="$PROJECT_DIR$/../rathed_leecher/resources/buttons/pause.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../rathed_leecher/buttons/play.png" beforeDir="false" afterPath="$PROJECT_DIR$/../rathed_leecher/resources/buttons/play.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../rathed_leecher/buttons/plus.png" beforeDir="false" afterPath="$PROJECT_DIR$/../rathed_leecher/resources/buttons/plus.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../rathed_leecher/buttons/skip-next.png" beforeDir="false" afterPath="$PROJECT_DIR$/../rathed_leecher/resources/buttons/skip-next.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../rathed_leecher/buttons/skip-previous.png" beforeDir="false" afterPath="$PROJECT_DIR$/../rathed_leecher/resources/buttons/skip-previous.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../rathed_leecher/buttons/stop.png" beforeDir="false" afterPath="$PROJECT_DIR$/../rathed_leecher/resources/buttons/stop.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../rathed_leecher/cmake-build-debug/CMakeFiles/3.13.4/CMakeDetermineCompilerABI_C.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../rathed_leecher/cmake-build-debug/CMakeFiles/3.13.4/CMakeDetermineCompilerABI_C.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../rathed_leecher/cmake-build-debug/CMakeFiles/3.13.4/CMakeDetermineCompilerABI_CXX.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../rathed_leecher/cmake-build-debug/CMakeFiles/3.13.4/CMakeDetermineCompilerABI_CXX.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../rathed_leecher/cmake-build-debug/CMakeFiles/3.13.4/CompilerIdC/a.out" beforeDir="false" afterPath="$PROJECT_DIR$/../rathed_leecher/cmake-build-debug/CMakeFiles/3.13.4/CompilerIdC/a.out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../rathed_leecher/cmake-build-debug/CMakeFiles/3.13.4/CompilerIdCXX/a.out" beforeDir="false" afterPath="$PROJECT_DIR$/../rathed_leecher/cmake-build-debug/CMakeFiles/3.13.4/CompilerIdCXX/a.out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../rathed_leecher/cmake-build-debug/CMakeFiles/CMakeError.log" beforeDir="false" afterPath="$PROJECT_DIR$/../rathed_leecher/cmake-build-debug/CMakeFiles/CMakeError.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../rathed_leecher/cmake-build-debug/CMakeFiles/CMakeOutput.log" beforeDir="false" afterPath="$PROJECT_DIR$/../rathed_leecher/cmake-build-debug/CMakeFiles/CMakeOutput.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../rathed_leecher/cmake-build-debug/CMakeFiles/CMakeRuleHashes.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../rathed_leecher/cmake-build-debug/CMakeFiles/CMakeRuleHashes.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../rathed_leecher/cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/../rathed_leecher/cmake-build-debug/CMakeFiles/Makefile.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../rathed_leecher/cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/../rathed_leecher/cmake-build-debug/CMakeFiles/Makefile2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../rathed_leecher/cmake-build-debug/CMakeFiles/feature_tests.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../rathed_leecher/cmake-build-debug/CMakeFiles/feature_tests.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../rathed_leecher/cmake-build-debug/CMakeFiles/progress.marks" beforeDir="false" afterPath="$PROJECT_DIR$/../rathed_leecher/cmake-build-debug/CMakeFiles/progress.marks" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../rathed_leecher/cmake-build-debug/CMakeFiles/rathed_leecher.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/../rathed_leecher/cmake-build-debug/CMakeFiles/rathed_leecher.dir/CXX.includecache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../rathed_leecher/cmake-build-debug/CMakeFiles/rathed_leecher.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/../rathed_leecher/cmake-build-debug/CMakeFiles/rathed_leecher.dir/DependInfo.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../rathed_leecher/cmake-build-debug/CMakeFiles/rathed_leecher.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/../rathed_leecher/cmake-build-debug/CMakeFiles/rathed_leecher.dir/build.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../rathed_leecher/cmake-build-debug/CMakeFiles/rathed_leecher.dir/cmake_clean.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/../rathed_leecher/cmake-build-debug/CMakeFiles/rathed_leecher.dir/cmake_clean.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../rathed_leecher/cmake-build-debug/CMakeFiles/rathed_leecher.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/../rathed_leecher/cmake-build-debug/CMakeFiles/rathed_leecher.dir/depend.internal" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../rathed_leecher/cmake-build-debug/CMakeFiles/rathed_leecher.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/../rathed_leecher/cmake-build-debug/CMakeFiles/rathed_leecher.dir/depend.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../rathed_leecher/cmake-build-debug/CMakeFiles/rathed_leecher.dir/flags.make" beforeDir="false" afterPath="$PROJECT_DIR$/../rathed_leecher/cmake-build-debug/CMakeFiles/rathed_leecher.dir/flags.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../rathed_leecher/cmake-build-debug/CMakeFiles/rathed_leecher.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../rathed_leecher/cmake-build-debug/CMakeFiles/rathed_leecher.dir/link.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../rathed_leecher/cmake-build-debug/CMakeFiles/rathed_leecher.dir/main.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/../rathed_leecher/cmake-build-debug/CMakeFiles/rathed_leecher.dir/main.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../rathed_leecher/cmake-build-debug/CMakeFiles/rathed_leecher.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/../rathed_leecher/cmake-build-debug/CMakeFiles/rathed_leecher.dir/progress.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../rathed_leecher/cmake-build-debug/CMakeFiles/rathed_leecher.dir/rathed_leecher_autogen/mocs_compilation.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/../rathed_leecher/cmake-build-debug/CMakeFiles/rathed_leecher.dir/rathed_leecher_autogen/mocs_compilation.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../rathed_leecher/cmake-build-debug/CMakeFiles/rathed_leecher_autogen.dir/AutogenInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/../rathed_leecher/cmake-build-debug/CMakeFiles/rathed_leecher_autogen.dir/AutogenInfo.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../rathed_leecher/cmake-build-debug/CMakeFiles/rathed_leecher_autogen.dir/AutogenOldSettings.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../rathed_leecher/cmake-build-debug/CMakeFiles/rathed_leecher_autogen.dir/AutogenOldSettings.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../rathed_leecher/cmake-build-debug/CMakeFiles/rathed_leecher_autogen.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/../rathed_leecher/cmake-build-debug/CMakeFiles/rathed_leecher_autogen.dir/build.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../rathed_leecher/cmake-build-debug/CMakeFiles/rathed_leecher_autogen.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/../rathed_leecher/cmake-build-debug/CMakeFiles/rathed_leecher_autogen.dir/progress.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../rathed_leecher/cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/../rathed_leecher/cmake-build-debug/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../rathed_leecher/cmake-build-debug/rathed_leecher" beforeDir="false" afterPath="$PROJECT_DIR$/../rathed_leecher/cmake-build-debug/rathed_leecher" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../rathed_leecher/cmake-build-debug/rathed_leecher.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/../rathed_leecher/cmake-build-debug/rathed_leecher.cbp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../rathed_leecher/cmake-build-debug/rathed_leecher_autogen/4GCFZ2LP4A/moc_TemplateRathed.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../rathed_leecher/cmake-build-debug/rathed_leecher_autogen/include/ui_widget.h" beforeDir="false" afterPath="$PROJECT_DIR$/../rathed_leecher/cmake-build-debug/rathed_leecher_autogen/include/ui_widget.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../rathed_leecher/cmake-build-debug/rathed_leecher_autogen/mocs_compilation.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../rathed_leecher/cmake-build-debug/rathed_leecher_autogen/mocs_compilation.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../rathed_leecher/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../rathed_leecher/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../rathed_leecher/template/widget.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../rathed_leecher/template/widget.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../rathed_leecher/template/widget.h" beforeDir="false" afterPath="$PROJECT_DIR$/../rathed_leecher/template/widget.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../rathed_leecher/template/widget.ui" beforeDir="false" afterPath="$PROJECT_DIR$/../rathed_leecher/template/widget.ui" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -32,7 +76,7 @@
         <entry file="file://$PROJECT_DIR$/peers/Seed.h">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="112">
-              <caret line="43" column="22" lean-forward="true" selection-start-line="43" selection-start-column="22" selection-end-line="43" selection-end-column="22" />
+              <caret line="43" column="22" selection-start-line="43" selection-start-column="22" selection-end-line="43" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -40,8 +84,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/peers/Seed.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="230">
-              <caret line="52" lean-forward="true" selection-start-line="52" selection-end-line="52" />
+            <state relative-caret-position="310">
+              <caret line="56" selection-start-line="56" selection-end-line="56" />
               <folding>
                 <element signature="e#78#99#0" expanded="true" />
               </folding>
@@ -199,7 +243,7 @@
     <auto-save>true</auto-save>
   </component>
   <component name="OCFindUsagesOptions" text="true" ivars="false" properties="true" derivedClasses="false" />
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="y" value="27" />
     <option name="width" value="1920" />
     <option name="height" value="1053" />
@@ -232,6 +276,16 @@
               <item name="rathed" type="b2602c69:ProjectViewProjectNode" />
               <item name="rathed" type="462c0819:PsiDirectoryNode" />
               <item name="rastreador" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="rathed" type="b2602c69:ProjectViewProjectNode" />
+              <item name="rathed" type="462c0819:PsiDirectoryNode" />
+              <item name="rede" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="rathed" type="b2602c69:ProjectViewProjectNode" />
+              <item name="rathed" type="462c0819:PsiDirectoryNode" />
+              <item name="util" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -310,12 +364,12 @@
       <workItem from="1555350721143" duration="10450000" />
       <workItem from="1555381738115" duration="1656000" />
       <workItem from="1555385958172" duration="11800000" />
-      <workItem from="1555414187995" duration="11525000" />
+      <workItem from="1555414187995" duration="12622000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="209377000" />
+    <option name="totallyTimeSpent" value="210474000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -327,15 +381,15 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="27" width="1920" height="1053" extended-state="6" />
+    <frame x="0" y="27" width="1920" height="1053" extended-state="7" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.8769968" visible="true" weight="0.18356457" />
-      <window_info id="Structure" order="1" sideWeight="0.12300319" side_tool="true" visible="true" weight="0.18356457" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.9345048" visible="true" weight="0.18356457" />
+      <window_info id="Structure" order="1" sideWeight="0.06549521" side_tool="true" visible="true" weight="0.18356457" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3297062" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3165939" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3165939" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39847162" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -663,14 +717,14 @@
     <entry file="file://$PROJECT_DIR$/peers/Seed.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="112">
-          <caret line="43" column="22" lean-forward="true" selection-start-line="43" selection-start-column="22" selection-end-line="43" selection-end-column="22" />
+          <caret line="43" column="22" selection-start-line="43" selection-start-column="22" selection-end-line="43" selection-end-column="22" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/peers/Seed.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="52" lean-forward="true" selection-start-line="52" selection-end-line="52" />
+        <state relative-caret-position="310">
+          <caret line="56" selection-start-line="56" selection-end-line="56" />
           <folding>
             <element signature="e#78#99#0" expanded="true" />
           </folding>

@@ -217,6 +217,33 @@ peers/Leecher.cpp.s:
 	$(MAKE) -f CMakeFiles/rathed_leecher.dir/build.make CMakeFiles/rathed_leecher.dir/peers/Leecher.cpp.s
 .PHONY : peers/Leecher.cpp.s
 
+rathed_leecher_autogen/3YJK5W5UP7/qrc_buttons.o: rathed_leecher_autogen/3YJK5W5UP7/qrc_buttons.cpp.o
+
+.PHONY : rathed_leecher_autogen/3YJK5W5UP7/qrc_buttons.o
+
+# target to build an object file
+rathed_leecher_autogen/3YJK5W5UP7/qrc_buttons.cpp.o:
+	$(MAKE) -f CMakeFiles/rathed_leecher.dir/build.make CMakeFiles/rathed_leecher.dir/rathed_leecher_autogen/3YJK5W5UP7/qrc_buttons.cpp.o
+.PHONY : rathed_leecher_autogen/3YJK5W5UP7/qrc_buttons.cpp.o
+
+rathed_leecher_autogen/3YJK5W5UP7/qrc_buttons.i: rathed_leecher_autogen/3YJK5W5UP7/qrc_buttons.cpp.i
+
+.PHONY : rathed_leecher_autogen/3YJK5W5UP7/qrc_buttons.i
+
+# target to preprocess a source file
+rathed_leecher_autogen/3YJK5W5UP7/qrc_buttons.cpp.i:
+	$(MAKE) -f CMakeFiles/rathed_leecher.dir/build.make CMakeFiles/rathed_leecher.dir/rathed_leecher_autogen/3YJK5W5UP7/qrc_buttons.cpp.i
+.PHONY : rathed_leecher_autogen/3YJK5W5UP7/qrc_buttons.cpp.i
+
+rathed_leecher_autogen/3YJK5W5UP7/qrc_buttons.s: rathed_leecher_autogen/3YJK5W5UP7/qrc_buttons.cpp.s
+
+.PHONY : rathed_leecher_autogen/3YJK5W5UP7/qrc_buttons.s
+
+# target to generate assembly for a file
+rathed_leecher_autogen/3YJK5W5UP7/qrc_buttons.cpp.s:
+	$(MAKE) -f CMakeFiles/rathed_leecher.dir/build.make CMakeFiles/rathed_leecher.dir/rathed_leecher_autogen/3YJK5W5UP7/qrc_buttons.cpp.s
+.PHONY : rathed_leecher_autogen/3YJK5W5UP7/qrc_buttons.cpp.s
+
 rathed_leecher_autogen/mocs_compilation.o: rathed_leecher_autogen/mocs_compilation.cpp.o
 
 .PHONY : rathed_leecher_autogen/mocs_compilation.o
@@ -244,6 +271,33 @@ rathed_leecher_autogen/mocs_compilation.cpp.s:
 	$(MAKE) -f CMakeFiles/rathed_leecher.dir/build.make CMakeFiles/rathed_leecher.dir/rathed_leecher_autogen/mocs_compilation.cpp.s
 .PHONY : rathed_leecher_autogen/mocs_compilation.cpp.s
 
+template/widget.o: template/widget.cpp.o
+
+.PHONY : template/widget.o
+
+# target to build an object file
+template/widget.cpp.o:
+	$(MAKE) -f CMakeFiles/rathed_leecher.dir/build.make CMakeFiles/rathed_leecher.dir/template/widget.cpp.o
+.PHONY : template/widget.cpp.o
+
+template/widget.i: template/widget.cpp.i
+
+.PHONY : template/widget.i
+
+# target to preprocess a source file
+template/widget.cpp.i:
+	$(MAKE) -f CMakeFiles/rathed_leecher.dir/build.make CMakeFiles/rathed_leecher.dir/template/widget.cpp.i
+.PHONY : template/widget.cpp.i
+
+template/widget.s: template/widget.cpp.s
+
+.PHONY : template/widget.s
+
+# target to generate assembly for a file
+template/widget.cpp.s:
+	$(MAKE) -f CMakeFiles/rathed_leecher.dir/build.make CMakeFiles/rathed_leecher.dir/template/widget.cpp.s
+.PHONY : template/widget.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -263,9 +317,15 @@ help:
 	@echo "... peers/Leecher.o"
 	@echo "... peers/Leecher.i"
 	@echo "... peers/Leecher.s"
+	@echo "... rathed_leecher_autogen/3YJK5W5UP7/qrc_buttons.o"
+	@echo "... rathed_leecher_autogen/3YJK5W5UP7/qrc_buttons.i"
+	@echo "... rathed_leecher_autogen/3YJK5W5UP7/qrc_buttons.s"
 	@echo "... rathed_leecher_autogen/mocs_compilation.o"
 	@echo "... rathed_leecher_autogen/mocs_compilation.i"
 	@echo "... rathed_leecher_autogen/mocs_compilation.s"
+	@echo "... template/widget.o"
+	@echo "... template/widget.i"
+	@echo "... template/widget.s"
 .PHONY : help
 
 

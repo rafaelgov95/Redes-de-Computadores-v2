@@ -11,6 +11,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "CMakeFiles/3.13.4/CMakeCCompiler.cmake"
   "CMakeFiles/3.13.4/CMakeCXXCompiler.cmake"
   "CMakeFiles/3.13.4/CMakeSystem.cmake"
+  "../resources/buttons.qrc"
   "/opt/clion/bin/cmake/linux/share/cmake-3.13/Modules/CMakeCInformation.cmake"
   "/opt/clion/bin/cmake/linux/share/cmake-3.13/Modules/CMakeCXXInformation.cmake"
   "/opt/clion/bin/cmake/linux/share/cmake-3.13/Modules/CMakeCommonLanguageInclude.cmake"
@@ -122,6 +123,7 @@ set(CMAKE_MAKEFILE_OUTPUTS
 # Byproducts of CMake generate step:
 set(CMAKE_MAKEFILE_PRODUCTS
   "CMakeFiles/rathed_leecher_autogen.dir/AutogenInfo.cmake"
+  "CMakeFiles/rathed_leecher_autogen.dir/RCCbuttonsInfo.cmake"
   "CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 

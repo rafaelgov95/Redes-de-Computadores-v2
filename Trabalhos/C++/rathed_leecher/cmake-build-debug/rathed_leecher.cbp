@@ -5,7 +5,7 @@
 		<Option title="rathed_leecher"/>
 		<Option makefile_is_custom="1"/>
 		<Option compiler="gcc"/>
-		<Option virtualFolders="CMake Files\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\..\;CMake Files\..\..\..\..\..\;CMake Files\..\..\..\..\..\..\;CMake Files\..\..\..\..\..\..\..\;CMake Files\..\..\..\..\..\..\..\..\;CMake Files\..\..\..\..\..\..\..\..\..\;CMake Files\..\..\..\..\..\..\..\..\..\usr\;CMake Files\..\..\..\..\..\..\..\..\..\usr\lib64\;CMake Files\..\..\..\..\..\..\..\..\..\usr\lib64\cmake\;CMake Files\..\..\..\..\..\..\..\..\..\usr\lib64\cmake\Qt5Widgets\;CMake Files\..\..\..\..\..\..\..\..\..\usr\lib64\cmake\Qt5Gui\;CMake Files\..\..\..\..\..\..\..\..\..\usr\lib64\cmake\Qt5Core\;CMake Files\..\..\..\..\..\..\..\..\..\usr\lib64\cmake\Qt5Quick\;CMake Files\..\..\..\..\..\..\..\..\..\usr\lib64\cmake\Qt5Qml\;CMake Files\..\..\..\..\..\..\..\..\..\usr\lib64\cmake\Qt5Network\;CMake Files\..\..\..\..\..\..\..\..\..\usr\lib64\cmake\Qt5Multimedia\;CMake Files\..\..\..\..\..\..\..\..\..\usr\lib64\cmake\Qt5MultimediaWidgets\;"/>
+		<Option virtualFolders="CMake Files\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\..\;CMake Files\..\..\..\..\..\;CMake Files\..\..\..\..\..\..\;CMake Files\..\..\..\..\..\..\..\;CMake Files\..\..\..\..\..\..\..\..\;CMake Files\..\..\..\..\..\..\..\..\..\;CMake Files\..\..\..\..\..\..\..\..\..\usr\;CMake Files\..\..\..\..\..\..\..\..\..\usr\lib64\;CMake Files\..\..\..\..\..\..\..\..\..\usr\lib64\cmake\;CMake Files\..\..\..\..\..\..\..\..\..\usr\lib64\cmake\Qt5Widgets\;CMake Files\..\..\..\..\..\..\..\..\..\usr\lib64\cmake\Qt5Gui\;CMake Files\..\..\..\..\..\..\..\..\..\usr\lib64\cmake\Qt5Core\;CMake Files\..\..\..\..\..\..\..\..\..\usr\lib64\cmake\Qt5Quick\;CMake Files\..\..\..\..\..\..\..\..\..\usr\lib64\cmake\Qt5Qml\;CMake Files\..\..\..\..\..\..\..\..\..\usr\lib64\cmake\Qt5Network\;CMake Files\..\..\..\..\..\..\..\..\..\usr\lib64\cmake\Qt5Multimedia\;CMake Files\..\..\..\..\..\..\..\..\..\usr\lib64\cmake\Qt5MultimediaWidgets\;CMake Files\resources\;"/>
 		<Build>
 			<Target title="all">
 				<Option working_dir="/home/rafael/Documentos/Mestrado/Materias/Redes-de-Computadores-v2/Trabalhos/C++/rathed_leecher/cmake-build-debug"/>
@@ -48,8 +48,8 @@
 					<Add directory="/home/rafael/Documentos/Mestrado/Materias/Redes-de-Computadores-v2/Trabalhos/C++/rathed_leecher/peers"/>
 					<Add directory="/home/rafael/Documentos/Mestrado/Materias/Redes-de-Computadores-v2/Trabalhos/C++/rathed_leecher/util"/>
 					<Add directory="/home/rafael/Documentos/Mestrado/Materias/Redes-de-Computadores-v2/Trabalhos/C++/rathed_leecher/model"/>
-					<Add directory="/template"/>
-					<Add directory="/template/widget.ui"/>
+					<Add directory="/home/rafael/Documentos/Mestrado/Materias/Redes-de-Computadores-v2/Trabalhos/C++/rathed_leecher/template"/>
+					<Add directory="/home/rafael/Documentos/Mestrado/Materias/Redes-de-Computadores-v2/Trabalhos/C++/rathed_leecher/resources"/>
 					<Add directory="/usr/include/qt"/>
 					<Add directory="/usr/include/qt/QtCore"/>
 					<Add directory="/usr/lib/qt/mkspecs/linux-g++"/>
@@ -96,8 +96,8 @@
 					<Add directory="/home/rafael/Documentos/Mestrado/Materias/Redes-de-Computadores-v2/Trabalhos/C++/rathed_leecher/peers"/>
 					<Add directory="/home/rafael/Documentos/Mestrado/Materias/Redes-de-Computadores-v2/Trabalhos/C++/rathed_leecher/util"/>
 					<Add directory="/home/rafael/Documentos/Mestrado/Materias/Redes-de-Computadores-v2/Trabalhos/C++/rathed_leecher/model"/>
-					<Add directory="/template"/>
-					<Add directory="/template/widget.ui"/>
+					<Add directory="/home/rafael/Documentos/Mestrado/Materias/Redes-de-Computadores-v2/Trabalhos/C++/rathed_leecher/template"/>
+					<Add directory="/home/rafael/Documentos/Mestrado/Materias/Redes-de-Computadores-v2/Trabalhos/C++/rathed_leecher/resources"/>
 					<Add directory="/usr/include/qt"/>
 					<Add directory="/usr/include/qt/QtCore"/>
 					<Add directory="/usr/lib/qt/mkspecs/linux-g++"/>
@@ -144,6 +144,12 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/home/rafael/Documentos/Mestrado/Materias/Redes-de-Computadores-v2/Trabalhos/C++/rathed_leecher/cmake-build-debug/rathed_leecher_autogen/3YJK5W5UP7/qrc_buttons.cpp">
+			<Option target="rathed_leecher"/>
+		</Unit>
+		<Unit filename="/home/rafael/Documentos/Mestrado/Materias/Redes-de-Computadores-v2/Trabalhos/C++/rathed_leecher/cmake-build-debug/rathed_leecher_autogen/3YJK5W5UP7/qrc_buttons.cpp.rule">
+			<Option target="rathed_leecher"/>
+		</Unit>
 		<Unit filename="/home/rafael/Documentos/Mestrado/Materias/Redes-de-Computadores-v2/Trabalhos/C++/rathed_leecher/cmake-build-debug/rathed_leecher_autogen/mocs_compilation.cpp">
 			<Option target="rathed_leecher"/>
 		</Unit>
@@ -160,6 +166,18 @@
 			<Option target="rathed_leecher"/>
 		</Unit>
 		<Unit filename="/home/rafael/Documentos/Mestrado/Materias/Redes-de-Computadores-v2/Trabalhos/C++/rathed_leecher/peers/Leecher.h">
+			<Option target="rathed_leecher"/>
+		</Unit>
+		<Unit filename="/home/rafael/Documentos/Mestrado/Materias/Redes-de-Computadores-v2/Trabalhos/C++/rathed_leecher/resources/buttons.qrc">
+			<Option target="rathed_leecher"/>
+		</Unit>
+		<Unit filename="/home/rafael/Documentos/Mestrado/Materias/Redes-de-Computadores-v2/Trabalhos/C++/rathed_leecher/template/ui_widget.h">
+			<Option target="rathed_leecher"/>
+		</Unit>
+		<Unit filename="/home/rafael/Documentos/Mestrado/Materias/Redes-de-Computadores-v2/Trabalhos/C++/rathed_leecher/template/widget.cpp">
+			<Option target="rathed_leecher"/>
+		</Unit>
+		<Unit filename="/home/rafael/Documentos/Mestrado/Materias/Redes-de-Computadores-v2/Trabalhos/C++/rathed_leecher/template/widget.h">
 			<Option target="rathed_leecher"/>
 		</Unit>
 		<Unit filename="/home/rafael/Documentos/Mestrado/Materias/Redes-de-Computadores-v2/Trabalhos/C++/rathed_leecher/util/util.h">
@@ -380,6 +398,9 @@
 		</Unit>
 		<Unit filename="/home/rafael/Documentos/Mestrado/Materias/Redes-de-Computadores-v2/Trabalhos/C++/rathed_leecher/../../../../../../../../../usr/lib64/cmake/Qt5MultimediaWidgets/Qt5MultimediaWidgetsConfigVersion.cmake">
 			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\..\..\usr\lib64\cmake\Qt5MultimediaWidgets\"/>
+		</Unit>
+		<Unit filename="/home/rafael/Documentos/Mestrado/Materias/Redes-de-Computadores-v2/Trabalhos/C++/rathed_leecher/resources/buttons.qrc">
+			<Option virtualFolder="CMake Files\resources\"/>
 		</Unit>
 	</Project>
 </CodeBlocks_project_file>

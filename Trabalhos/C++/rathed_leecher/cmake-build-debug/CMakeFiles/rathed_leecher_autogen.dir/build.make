@@ -54,7 +54,7 @@ CMAKE_BINARY_DIR = /home/rafael/Documentos/Mestrado/Materias/Redes-de-Computador
 include CMakeFiles/rathed_leecher_autogen.dir/progress.make
 
 CMakeFiles/rathed_leecher_autogen:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/rafael/Documentos/Mestrado/Materias/Redes-de-Computadores-v2/Trabalhos/C++/rathed_leecher/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Automatic MOC for target rathed_leecher"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/rafael/Documentos/Mestrado/Materias/Redes-de-Computadores-v2/Trabalhos/C++/rathed_leecher/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Automatic MOC and UIC for target rathed_leecher"
 	/opt/clion/bin/cmake/linux/bin/cmake -E cmake_autogen /home/rafael/Documentos/Mestrado/Materias/Redes-de-Computadores-v2/Trabalhos/C++/rathed_leecher/cmake-build-debug/CMakeFiles/rathed_leecher_autogen.dir/AutogenInfo.cmake Debug
 
 rathed_leecher_autogen: CMakeFiles/rathed_leecher_autogen

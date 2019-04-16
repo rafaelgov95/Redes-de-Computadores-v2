@@ -1,11 +1,9 @@
 cmake_minimum_required(VERSION 3.13)
 project(rathed_leecher)
-set(CMAKE_INCLUDE_CURRENT_DIR ON)
-set(UI template/widget.ui)
-
 set(CMAKE_AUTOMOC ON)
-set(CMAKE_AUTOUIC OFF)
 set(CMAKE_AUTORCC ON)
+set(CMAKE_AUTOUIC ON)
+set(CMAKE_INCLUDE_CURRENT_DIR ON)
 
 find_package(Qt5Widgets CONFIG REQUIRED)
 find_package(Qt5Core CONFIG REQUIRED)
@@ -25,13 +23,15 @@ protobuf_generate_cpp(model/model.pb.h model/model.pb.cc model/model.proto )
 find_package (Threads REQUIRED)
 set(CMAKE_CXX_STANDARD 14)
 
-include_directories( peers/  util/ model/ /template /template/widget.ui)
+include_directories( peers/  util/ model/ template/ resources/)
+
 
 qt5_wrap_ui(UI_HEADERS ${UI})
 
 add_executable(rathed_leecher main.cpp peers/Leecher.cpp peers/Leecher.h
-        util/util.h model/model.pb.cc model/model.pb.h
+        util/util.h model/model.pb.cc model/model.pb.h template/widget.cpp template/widget.h template/ui_widget.h resources/buttons.qrc
         )
+set_target_properties(rathed_leecher PROPERTIES AUTOMOC TRUE)
 
 target_link_libraries(rathed_leecher Qt5::Core)
 target_link_libraries(rathed_leecher Qt5::Widgets)
