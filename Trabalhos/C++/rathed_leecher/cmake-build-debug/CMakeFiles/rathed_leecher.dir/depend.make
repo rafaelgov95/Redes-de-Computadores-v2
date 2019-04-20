@@ -421,6 +421,9 @@ CMakeFiles/rathed_leecher.dir/rathed_leecher_autogen/mocs_compilation.cpp.o: /us
 CMakeFiles/rathed_leecher.dir/rathed_leecher_autogen/mocs_compilation.cpp.o: /usr/include/qt/QtWidgets/qtwidgetsglobal.h
 CMakeFiles/rathed_leecher.dir/rathed_leecher_autogen/mocs_compilation.cpp.o: /usr/include/qt/QtWidgets/qwidget.h
 
+CMakeFiles/rathed_leecher.dir/template/widget.cpp.o: ../peers/Leecher.h
+CMakeFiles/rathed_leecher.dir/template/widget.cpp.o: ../model/model.pb.h
+CMakeFiles/rathed_leecher.dir/template/widget.cpp.o: ../util/util.h
 CMakeFiles/rathed_leecher.dir/template/widget.cpp.o: ../template/ui_widget.h
 CMakeFiles/rathed_leecher.dir/template/widget.cpp.o: ../template/widget.cpp
 CMakeFiles/rathed_leecher.dir/template/widget.cpp.o: ../template/widget.h

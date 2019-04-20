@@ -53,7 +53,7 @@ void Seed::run() {
 
     address_length = sizeof(struct sockaddr); //tamanh do endereco ipv4
 
-    atualizarRastreador("cc72fc24056ced9ce13a287ca1243d48","/home/rafael/Música/EU-NUNCA-ESTOU-SO.mp3");
+    atualizarRastreador("cc72fc24056ced9ce13a287ca1243d48","/home/rafael/Música/AlanWalker.mp3");
 
     while (1) {
         readfds = socketoriginal;
@@ -123,6 +123,7 @@ void Seed::EnviarArquivo(rathed::Datagrama data) {
         datagrama.set_type(static_cast<rathed::DatagramaType>(1));
         datagrama.set_packnumber(data.packnumber());
         datagrama.set_data(send_data, size_bytes);
+        usleep(3000);
 
         if (sendto(socket_fd, DataGramaSerial(datagrama), datagrama.ByteSizeLong(), 0,
                    (struct sockaddr *) &client_address, sizeof(struct sockaddr)) <= 0)
@@ -135,7 +136,7 @@ void Seed::EnviarArquivo(rathed::Datagrama data) {
         std::cout << "Bytes Datagrama: " << datagrama.ByteSizeLong() << std::endl;
 
 
-        usleep(200);
+        usleep(3000);
     } else {
         if (
                 sendto(socket_fd,

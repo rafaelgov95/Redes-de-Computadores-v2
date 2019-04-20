@@ -22,6 +22,8 @@ Q_OBJECT
 public:
     explicit Widget(QWidget *parent = 0);
     ~Widget();
+//static void startLeecher(std::string hash,std::string path);
+
 
 private slots:
     void on_btn_add_clicked();              // Slot para processar adicionando faixas através da caixa de diálogo

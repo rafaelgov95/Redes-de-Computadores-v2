@@ -109,14 +109,14 @@ void Leecher::downloandP2P(sockaddr_in seed_address, std::string caminho, std::s
             std::cout << "Total Bytes Recebido File: " << buff_int << " DE " << total_bytes_file << std::endl;
             std::cout << "Total Bytes Recebido Datagrama: " << buff_data << std::endl;
 
-            usleep(200);
+            usleep(3000);
             datagrama_buff.set_type(static_cast<rathed::DatagramaType>(2));
             datagrama_buff.set_packnumber(buff_int);
             datagrama_buff.set_data(hash);
             sendto(socket_fd, DataGramaSerial(datagrama_buff), datagrama_buff.ByteSizeLong(), 0,
                    (struct sockaddr *) &seed_address,
                    sizeof(struct sockaddr));
-            usleep(200);
+            usleep(3000);
 
         }
 

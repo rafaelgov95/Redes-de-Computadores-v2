@@ -422,6 +422,9 @@ CMakeFiles/rathed_leecher.dir/rathed_leecher_autogen/mocs_compilation.cpp.o
  /usr/include/qt/QtWidgets/qtwidgetsglobal.h
  /usr/include/qt/QtWidgets/qwidget.h
 CMakeFiles/rathed_leecher.dir/template/widget.cpp.o
+ ..//peers/Leecher.h
+ ../model/model.pb.h
+ ../util/util.h
  /home/rafael/Documentos/Mestrado/Materias/Redes-de-Computadores-v2/Trabalhos/C++/rathed_leecher/template/ui_widget.h
  /home/rafael/Documentos/Mestrado/Materias/Redes-de-Computadores-v2/Trabalhos/C++/rathed_leecher/template/widget.cpp
  /home/rafael/Documentos/Mestrado/Materias/Redes-de-Computadores-v2/Trabalhos/C++/rathed_leecher/template/widget.h

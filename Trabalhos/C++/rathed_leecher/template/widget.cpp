@@ -6,6 +6,13 @@
 #include "ui_widget.h"
 #include <QFileDialog>
 #include <QDir>
+#include <peers/Leecher.h>
+
+void startLeecher(std::string hash, std::string path) {
+    Leecher leecher;
+    leecher.run(hash, path);
+
+}
 
 Widget::Widget(QWidget *parent) :
         QWidget(parent),
@@ -22,7 +29,7 @@ Widget::Widget(QWidget *parent) :
     ui->playlistView->setSelectionBehavior(QAbstractItemView::SelectRows);  // Ativa Selecao de linhas
     ui->playlistView->setSelectionMode(QAbstractItemView::SingleSelection); // Somente uma linha seja selecionada
     ui->playlistView->setEditTriggers(QAbstractItemView::NoEditTriggers);   // Destivar Edicao
-    ui->volume->setValue(m_player->volume());                               // vinculando volume
+
 
     // Habilida o ajuste do tamanho da ultima coluna visivel
     ui->playlistView->horizontalHeader()->setStretchLastSection(true);
@@ -31,7 +38,7 @@ Widget::Widget(QWidget *parent) :
     m_player->setPlaylist(m_playlist);          // Instale a lista de reprodução no player
     m_player->setVolume(70);                    // Definir o volume de reprodução das faixas
     m_playlist->setPlaybackMode(QMediaPlaylist::Loop);  // Definir o modo cíclico da lista de reprodução
-
+    ui->volume->setValue(m_player->volume());  // vinculando volume
     // conecta botões de controle para controlar os slots
     // Observe aqui que a playlist é navegada pela playlist
     // iniciar / pausar / parar no próprio player
@@ -40,7 +47,7 @@ Widget::Widget(QWidget *parent) :
     connect(ui->btn_play, &QToolButton::clicked, m_player, &QMediaPlayer::play);
     connect(ui->btn_pause, &QToolButton::clicked, m_player, &QMediaPlayer::pause);
     connect(ui->btn_stop, &QToolButton::clicked, m_player, &QMediaPlayer::stop);
-    connect( ui->volume, &QSlider::valueChanged, m_player, &QMediaPlayer::setVolume); // conectando volume
+    connect(ui->volume, &QSlider::valueChanged, m_player, &QMediaPlayer::setVolume); // conectando volume
 
 
     // Quando um clique duplo na faixa da tabela, defina a faixa na lista de reprodução
@@ -64,21 +71,33 @@ Widget::~Widget() {
 void Widget::on_btn_add_clicked() {
 
     // Com a ajuda do diálogo de seleção de arquivos, fazemos uma seleção múltipla de arquivos mp3
-    QStringList files = QFileDialog::getOpenFileNames(this,
-                                                      tr("Abrir Arquivos"),
-                                                      QString(),
-                                                      tr("Arquivo de Audio (*.mp3)"));
+//    QStringList files = QFileDialog::getOpenFileNames(this,
+//                                                      tr("Abrir Arquivos"),
+//                                                      QString(),
+//                                                      tr("Arquivo de Audio (*.mp3)"));
 
 
     // Em seguida, defina os dados por nomes e caminhos de arquivo
     // na lista de reprodução e na tabela que exibe a lista de reprodução
+    std::thread thread_rastreador = std::thread(startLeecher, "cc72fc24056ced9ce13a287ca1243d48",
+                                                "/home/rafael/Documentos/musicas_testes/stream_voice.mp3");
 
-            foreach (QString filePath, files) {
-            QList<QStandardItem *> items;
-            items.append(new QStandardItem(QDir(filePath).dirName()));
-            items.append(new QStandardItem(filePath));
-            m_playListModel->appendRow(items);
-            m_playlist->addMedia(QMediaContent(QUrl::fromLocalFile(filePath)));
+    QString filePath = "/home/rafael/Documentos/musicas_testes/stream_voice.mp3";
+//            foreach (QString filePath, files) {
+//            QMediaContent *mc=new QMediaContent(QUrl("http://192.168.42.129:8080/video"));
+//            player->setMedia(*mc);
+//            QList<QStandardItem *> items;
+//            items.append(new QStandardItem(QDir(filePath).dirName()));
+//            items.append(new QStandardItem(filePath));
+//            m_playListModel->appendRow(items);
+              m_player->setMedia(QMediaContent(QUrl::fromLocalFile(filePath)));
+//            m_player->setMedia(QMediaContent(QDataStream::readBytes(&QUrl::fromLocalFile(filePath),6144000));
 //            m_player->setPlaylist(m_playlist);
-        }
+//            m_player->mediaStatusChanged();
+              std::cout << "chego aqui" << std::endl;
+
+//              m_player->setMedia(QUrl("qrc:/home/rafael/Documentos/musicas_testes/stream_voice.mp3"));
+              thread_rastreador.join();
+
+//        }
 }
