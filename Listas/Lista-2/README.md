@@ -1,5 +1,4 @@
-# Lista de Exercícios – Conceitos Básicos
-
+# Lista de Exercícios – Lista 2
 
 ## Exercícios
 
@@ -107,21 +106,21 @@
         determinado usuário
         p) (F) POP3 é um protocolo responsável pelo envio de e-mails
 
-    8) Sobre o FTP podemos afirmar que:
+    2) Sobre o FTP podemos afirmar que:
         a) É um programa para acessar uma máquina remotamente e executar um programa
         b) Permite a visualização de páginas WWW
         c) Transfere somente arquivos textos
         d)VERDADEIRA: Caso o usuário tenha uma senha a máquina remota, é possível fazer um download e um upload
         e) O FTP é o protocolo padrão para todas as transferências de dados, quer sejam páginas HTML (Home Page), quer sejam arquivos ou mesmo os e-mails.
 
-    9) Sobre o e-mail podemos afirmar que:
+    3) Sobre o e-mail podemos afirmar que:
         a) VERDADEIRA: Utiliza o SMTP para fazer a entrega de dados
         b) O usuário precisa estar com seu computador ligado para receber um e-mail
         c) VERDADEIRA: O servidor de e-mail precisa estar funcionando para receber os e-mails deste domínio
         d) É possível ter o mesmo login em servidores diferentes, deste que estes sejam do mesmo domínio.
    
-    10)   Explique como (quais técnicas usadas) as aplicações WEB podem fazer controle de sessões, se o protocolo HTTP é um protocolo que não mantém estados das conexões.
+    4)    Explique como (quais técnicas usadas) as aplicações WEB podem fazer controle de sessões, se o protocolo HTTP é um protocolo que não mantém estados das conexões.
         Resposta: Utilizando formas de armazenar essas sessões em arquivos, e transmitir estes arquivos pelo cabeçalho http, um exempli são os cokiees, assim quando o servidor receber uma mensagem http com um arquivo cokkoie anteirormente transmitido para o usuario ele sabera oque fazer.
 
-    11)   Qual a função de um Proxy HTTP?
+    5)    Qual a função de um Proxy HTTP?
         Servidores proxy são utilizados para armazenar um deterinado arquivo em memoria cache porque o mesmo pode ser solicitado novamente por outros usuarios conectados na rede assim, auxiliando no desempenho já que o arquivo não precissara ser buscado na Internet o sevidor Proxy fica responsavel por devolver o arquivo, porem o proxy tem que dermina ate quando o arquivo pode ser utiliado, como exempo em páginas web podem ser armaqnadas em proxy de http para posteriormente ser transmitida.
