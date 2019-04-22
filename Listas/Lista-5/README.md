@@ -15,16 +15,8 @@
     c) Suponha agora que  o enlace possa entregar os pacotes fora de ordem, e que às vezes o pacote pode ser entregue até 1 minuto após pacotes subseqüentes. Como isso altera os requisitos para o número de sequência?
 
   2) Suponha que você esteja projetando um protocolo de janela deslizante para um enlace ponto  a  ponto  de  1  Mbps  para  um  satélite  estacionário  à  3  x  104  km  de  altitude. Considerando que cada pacote carrega 1 KB de dados, qual o número mínimo de bits será necessário para o “número de sequência” nos seguintes casos? Suponha velocidade da luz igual a 3 x 108 m/s. 
-    a.RWS = 1 
-      * trans + prop =rtt
-      * rtt * bandwlang = tamanho SWS
-      * RWS = 27047.50000 bytes
-      * 2^15 = 32768bytes
-       
+    a.RWS = 1
     b.RWS = SWS 
-      * trans + prop =rtt
-      * rtt * bandwlang = tamanho SWS
-      * SWS < seq/2+1 =  2^16 =  65536 bytes de tamanho
 
   3) Desenhe um diagrama com a linha do tempo para o algoritmo de janela deslizante, com tamanho de 3 quadros para a janela do emissor (SWS) e do receptor (RWS), para os casos a seguir. Use um intervalo de timeout de 2 x RTT.   OBS: Desenhe o diagrama até o envio do décimo quadro, e mostre as mensagens de controle trocadas entre emissor e receptor, eventos  de timeout,  situação  da  janela,  e  tudo  que  achar  importante  para  o entendimento do funcionamento do algoritmo.
     
