@@ -1,24 +1,28 @@
 # Lista de Exercícios – Lista 3
 
 ## Exercícios
-
-  1. Considere um protocolo simples para transferência de arquivos. Após uma negociação inicial, A envia pacotes de tamanho 1 KB para B; B então responde com um reconhecimento (ACK). A sempre espera por cada ACK antes de enviar o próximo pacote de dados. Isso é conhecido como protocolo stop-and-wait. Pacotes atrasados são supostos como perdidos e retransmitidos. 
-
-    a) Na ausência de perdas e duplicações, explique porque não é necessário a inclusão de um “número de seqüência” no cabeçalho do protocolo.
-      
-      * Em um protocolo stop-and-wait com ausência de perdas e duplicações, o número de sequências não é necessario basta A encaminhar um pacote para B e B responder com ACK para A e assim podendo criar uma retro alimentação confiavel entre A e B.
-
-
-    b) Suponha que o enlace ocasionalmente perde pacotes, mas que os pacotes chegam sempre na ordem enviada. Um número de sequência de 2 bits é suficiente para que A e B detectem e reenviem os pacotes perdidos? E um  número de sequência de 1 bit é suficiente? 
+ 1. Admitindo-se  que  TCP  Reno  é  o  protocolo  que  experimenta  o  comportamento mostrado  no  gráfico responda  às  seguintes  perguntas.  Em  todos  os  casos  você  deverá apresentar uma justificativa resumida para sua resposta
     
+    a. Quais os intervalos de tempo em que a partida lenta do TCP está em execução?
     
-    c) Suponha agora que  o enlace possa entregar os pacotes fora de ordem, e que às vezes o pacote pode ser entregue até 1 minuto após pacotes subseqüentes. Como isso altera os requisitos para o número de sequência?
-
-  2) Suponha que você esteja projetando um protocolo de janela deslizante para um enlace ponto  a  ponto  de  1  Mbps  para  um  satélite  estacionário  à  3  x  104  km  de  altitude. Considerando que cada pacote carrega 1 KB de dados, qual o número mínimo de bits será necessário para o “número de sequência” nos seguintes casos? Suponha velocidade da luz igual a 3 x 108 m/s. 
-    a.RWS = 1
-    b.RWS = SWS 
-
-  3) Desenhe um diagrama com a linha do tempo para o algoritmo de janela deslizante, com tamanho de 3 quadros para a janela do emissor (SWS) e do receptor (RWS), para os casos a seguir. Use um intervalo de timeout de 2 x RTT.   OBS: Desenhe o diagrama até o envio do décimo quadro, e mostre as mensagens de controle trocadas entre emissor e receptor, eventos  de timeout,  situação  da  janela,  e  tudo  que  achar  importante  para  o entendimento do funcionamento do algoritmo.
+    b. Quais  os  intervalos  de  tempo  que  a  prevenção  de  congestionamento  do  TCP  está  em execução 
     
-    a) Considere que o quarto quadro foi perdido. 
-    b) Quadros 4, 5 e 6 são perdidos. 
+    c. Após a 16ª rodada de transmissão, a perda de segmento será detectada por três ACKs duplicados ou por um esgotamento de temporização? 
+    
+    d. Após a 22ª rodada de transmissão, a perda de segmento será detectada por três ACKs duplicados ou por um esgotamento de temporização?
+    
+    e. Qual é o valor inicial de Threshold na primeira rodada de transmissão? 
+    
+    f. Qual é o valor inicial de Threshold na 18ª rodada de transmissão?
+    
+    g. Qual é o valor de Threshold na 24ª rodada de transmissão? h.Durante qual rodada de transmissão é enviada o 70º segmento? 
+    
+    i. Admitindo-se que uma perda de pacote será detectada após a 26ª rodada pelo recebimento de três ACKs duplicados, quais serão os valores do tamanho da janela de congestionamento e de Threshold
+
+  2. Considere os seguintes dados do algoritmo de controle de congestionamento do TCP Reno (combinação de partida lenta, aumento aditivo/diminuição multiplicativa e retransmissão/recuperação rápida): MSS = 1460 bytes,  Threshold = 64Kbps,  CongWin = 8 MSS  e RTT=1s.    
+     a. Qual a taxa atual de transmissão? 
+
+     b. Se todos os bytes transmitidos forem confirmados com sucesso, qual será a nova taxa de transmissão após 1 RTT ?
+
+     c. Caso haja uma falha por temporização, qual será a nova taxa máxima de transmissão? 
+   

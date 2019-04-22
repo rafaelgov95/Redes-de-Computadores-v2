@@ -48,5 +48,48 @@
   7. O  algoritmo  de  Nagle  requer  que  o  emissor  mantenha um  segmento  de  dados  parcial  até que os dados atinjam o tamanho de um segmento (mesmo que haja dados sinalizados como prioritários) ou chegue um ACK pendente do receptor. 
      a. Suponha  que  as  letras abcdefghi  sejam  enviadas,  uma  por  segundo,  através de  uma  conexão TCP  cujo  RTT  seja  igual a  4,1  segundos.  Desenhe  uma  linha indicando quando cada pacote é enviado e o que ele contém. 
       * R:
- 
+     b. Suponha que as mudanças de posições de um mouse sejam enviadas através da conexão. Assumindo que muitas mudanças são enviadas a cada RTT, como o usuário notaria o avanço do mouse com e sem o uso do algoritmo de Nagle?
   
+  8. Explique por que TIME_WAIT é um problema maior se o servidor iniciar o fechamento da conexão.
+    R: Se o servidor iniciar o fechamento e o cliente estiver enviando dados, estes serão perdidos.   
+
+  9.  Por que os protocolos UDP e TCP utilizam os campos IP de destino/IP de origem em seus checksums? Qual é o problema dessa abordagem que mistura dados da Camada de Transporte com dados da Camada de Rede? 
+      R: Um problema em fazer isso é porque quebra o principio das camadas onde cada camada tem que ser responsavel apenas por realizar operações em suas camadas, se algum dia o modo de como a camada for modificada porem suas interfaces continuarem as mesmas o protocolo irá quebrar porque não sabera gerenciar o novo cabellho por este propossito as camadas trabalham com interfaces de comunicação entre a camada superior e a inferior.  
+      
+  
+  10. Por que os protocolos da Camada de Transporte recebem o nome de Protocolos Fim-a-Fim?
+    * R: Porque ele entrega um pacote de processo do hospedeiro A para processo do hospedeiro B e possui confiabilidade com checksum da camada de transporte, diferente da camada de enlace que garante confiabilidade entre enlaces, porém não dentro de filas de roteadores digamos, ou da camada de rede com confiabilidade entre hospedeiros mais não entre processos. 
+
+
+  11. Relacione as Colunas
+
+      1.  Controle de Fluxo
+      2.  Controle de Congestionamento
+      3.  Ambos os mecanismos
+      4.  Nenhum dos anteriores
+      
+      (1) Controla a quantidade de dados que o transmissor pode enviar ao receptor sem confirmação.
+      (1) Limita a velocidade de transmissão em função da capacidade de processamento do receptor.
+      (2) Limita a velocidade de transmissão para evitar congestionamento da rede.
+      (2) Reduz a quantidade de dados que pode ser transmitida sem confirmação quando um pacote não chega ao seu destino
+      ( ) Rejeita o pedido de uma nova conexão TCP caso não haja mais banda disponível
+      ( ) Mantém a taxa de transmissão constante ao longo de toda a conexão TCP.
+
+  12. Supondo uma comunicação TCP iniciada e terminada pelo cliente. Numere a ordem dos pacotes e deixe em branco os pacotes que não corresponderem a uma comunicação TCP.
+      (3/4) Cliente e Servidor trocam pacotes de dados com ACK=1, SYN=0 , FIN=0
+      (5) O servidor envia um pacote com ACK=1, SYN=0, FIN=1
+      (2) O servidor envia um pacote com ACK=1, SYN=1 , FIN=0
+      (3) O cliente envia um pacote com ACK=1, SYN=0, FIN=0
+      (4 ) O cliente envia um pacote com ACK=1, SYN=0, FIN=1
+      ( ) O servidor envia um pacote com ACK=1, SYN=1, FIN=1
+      ( ) O cliente envia um pacote com ACK=0, SYN=0, FIN=0
+      ( ) O servidor envia um pacote com ACK=0, SYN=1, FIN=1
+      (1) O cliente envia um pacote com ACK=0, SYN=1, FIN=0
+      ( ) O servidor envia um pacote com ACK=0, SYN=1, FIN=0
+
+  13) Considerando os seguintes dados, determine quantos bytes no máximo podem ser enviados
+  do servidor para o cliente, sem confirmação:
+  – último número de confirmação recebido pelo servidor: 9000
+  – janela de recepção anunciada do cliente: 10000 bytes
+  – último número de seqüência enviado pelo servidor: 12000
+  – janela do emissor é de 7000 bytes    
