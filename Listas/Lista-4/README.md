@@ -3,12 +3,12 @@
 ## Exercícios
 
   1. Descreva os passos para estabelecimento de uma conexão (three-way handshake) e para a finalização da mesma.
-      Conexão
+     * Conexão
         1. Cliente encaminha [SYNbit=1, seq=x]
         2. Servidor recebe etapa 1 encaminha [SYNbit=1, seq=y, ACKseq=x+1]
         3. Cliente recebe etapa 2 encaminha [SYNbit=0, seq=x+1, ACKseq=y+1]
         4. Em 3 já podem começar a troca de informação.
-      Finalização 
+     * Finalização 
         1. Cliente solicita o fechamento encaminha [FIN=1, seq=x] 
         2. Servidor recebe etapa 1 e encaimnha uma confirmação só que não finaliza proque ela pode estar encaminhando dados ainda então so confirma com [FIN=0, ACK=x+1]
         3. Cliente recebe a confirmação do servidor então sabe que pode ligar um temporizador senão teria que retransmitir o pacote de encerramento!
@@ -16,7 +16,7 @@
         5. Cliente confirma o encerramento e finaliza com o envio de um [ACK=y+1]
  
   2. Quando uma conexão é fechada, por que não são necessárias temporizações (timeouts) na transição de LAST_ACK para CLOSED? 
-    R: O servidor ja está ciente que o cliente pediu o encerramento se ele termino de transmitir os dados que estavam pendendentes, basta posteriormente encaminhar um [FIN=1,seqy] para o cliente assim o fim da transmissão e realizado sem ter a necessidade de receber a confirmação do encerramento para o cliente que iniciou um temporizador para encerramento.
+    * R: O servidor ja está ciente que o cliente pediu o encerramento se ele termino de transmitir os dados que estavam pendendentes, basta posteriormente encaminhar um [FIN=1,seqy] para o cliente assim o fim da transmissão e realizado sem ter a necessidade de receber a confirmação do encerramento para o cliente que iniciou um temporizador para encerramento.
 
   3. No  protocolo  de  janelas  deslizantes  utilizado  no  TCP,  um  emissor  que  recebe  uma  janela de anúncio (AdvertisedWindow) igual a 0 periodicamente consulta o receptor para saber se o  tamanho  da  janela  tornou-se  diferente  de  zero.  Se  considerássemos  um  caso  hipotético em  que  o  receptor  fosse  o  responsável  por  informar o  emissor  o  momento  em  que  a  sua janela  de  anúncio  se  tornasse  maior  que  zero,  veríamos  que  o  receptor  precisaria  de  um temporizador extra. Por quê?
         * R : O receptor teria a necessidade de alertar o transmissor o momento que o ele se encontrasse com um valor de janela maior que 0 ou outro tamanho da janela, assim para o transmissor ficar sabendo deste valor o receptor teria que notificalo com uma mensagem,  utilizar um temporizador de tempos em tempos ele realiza o anuncio do tamanho de janela se esta estiver maior que 0 para o transmissor, senão espera mais um tempo para outra tentativa.  
@@ -56,11 +56,37 @@
             * Servidor recebe e encaminha [sync 1, seq y, ACKnum=x+1].
             * Cliente encaminha pacote [sync 1, seq k].
             * Servidor recebe e percebe que o número de sequência não é o anteriormente armazenado e assim sabe que é uma nova conexão.
+      * Algoritmo
+            * if (connections tolportare not being accepted)
+                * send RST
+            * else if (there is no entry inTfor〈lport, raddr, rport〉) // new SYN
+                * Put〈lport, raddr, rport〉into a table,
+                * Set rISN to be the received packet’s ISN,
+                * Set lISN to be our own ISN,
+                * Send the reply ACK
+                * Record the connection as being in state SYNRECD
+            * else if (T[〈lport, raddr, rport〉] already exists)
+                * if (ISN in incoming packet matches rISN from the table)
+                  * // SYN is a duplicate; ignore it
+                * else
+                * send RST to〈raddr, rport〉
 
   7. O  algoritmo  de  Nagle  requer  que  o  emissor  mantenha um  segmento  de  dados  parcial  até que os dados atinjam o tamanho de um segmento (mesmo que haja dados sinalizados como prioritários) ou chegue um ACK pendente do receptor. 
      a. Suponha  que  as  letras abcdefghi  sejam  enviadas,  uma  por  segundo,  através de  uma  conexão TCP  cujo  RTT  seja  igual a  4,1  segundos.  Desenhe  uma  linha indicando quando cada pacote é enviado e o que ele contém. 
-      * R:
+      * T=0.0  ‘a’ sent
+      * T=1.0  ‘b’ collected in buffer
+      * T=2.0  ‘c’ collected in buffer
+      * T=3.0  ‘d’ collected in buffer
+      * T=4.0  ‘e’ collected in buffer
+      * T=4.1  ACK of ‘a’ arrives, “bcde” sent
+      * T=5.0  ‘f’ collected in buffer
+      * T=6.0  ‘g’ collected in buffer
+      * T=7.0  ‘h’ collected in buffer
+      * T=8.0  ‘i’ collected in buffer
+      * T=8.2  ACK arrives; “fghi” sent
+       
      b. Suponha que as mudanças de posições de um mouse sejam enviadas através da conexão. Assumindo que muitas mudanças são enviadas a cada RTT, como o usuário notaria o avanço do mouse com e sem o uso do algoritmo de Nagle?
+      * Com o algoritmo de Nagle, o mouse parece pular de um lugar para outro. Sem o algoritmo Nagle, o cursor do mouse moveria suavemente, mas exibiria alguma inércia: ele continuaria se movendo para um RTT após o mouse físico ser parado.
   
   8. Explique por que TIME_WAIT é um problema maior se o servidor iniciar o fechamento da conexão.
     R: Se o servidor iniciar o fechamento e o cliente estiver enviando dados, estes serão perdidos.   
