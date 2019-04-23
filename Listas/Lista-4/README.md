@@ -22,14 +22,26 @@
         * R : O receptor teria a necessidade de alertar o transmissor o momento que o ele se encontrasse com um valor de janela maior que 0 ou outro tamanho da janela, assim para o transmissor ficar sabendo deste valor o receptor teria que notificalo com uma mensagem,  utilizar um temporizador de tempos em tempos ele realiza o anuncio do tamanho de janela se esta estiver maior que 0 para o transmissor, senão espera mais um tempo para outra tentativa.  
 
   4. O  tamanho  do  campo  “Sequence  Number”  no  cabeçalho  TCP  é  de  32  bits,  o  que corresponde  a  uma  cobertura  de  mais  de  4  bilhões  de  bytes  de  dados.  Mesmo  que  esse montante de dados não seja transferido em uma única conexão TCP, por que o número de sequência ainda pode passar de 2^32-1 para 0?
-      * R: 
+      * R: O número de sequência varia aleatoria e possui formato de anel, então se estiver sido aleatoriamente sorteado em 2^32-1 seu proximo número será 0.   
 
   5. Você  foi  contratado  para  projetar  um  protocolo  baseado  em  fluxo  de  bytes  e  que implemente  a  ideia  de  janelas  deslizantes,  tal  como  o  TCP.  O  protoloco  a  ser  projetado deverá executar em cima de uma rede de 1 Gbps. O RTT (round trip time) dessa rede é de 140  ms  e  o  tempo  de  vida de  um  segmento  é  de  60  segundos.  Quantos  bits  você  incluiria nos campos AdvertisedWindow e SequenceNum do cabeçalho do seu protocolo?
-       * R: 0.140 * 10^6 / 8
+      * AdvertisedWindow: (0.140 * 10^9) / 8 -resultado em bits
+         * 17,5MB = 2^25 numero de sequencia ideal
+         * Janela = 2^25
+      * Sequence Num: 
+        * Etapa Conferir Tempo de vida
+          * (60 * 10^9) / 8
+          * 7.5 GB = 2^33 
+          * NumberSeqPeloTTL=2^33
+        * Etapa conferir o multiplo da janela
+          * NumberSequencia = Janela 2^25 <= Numbersequência+1/2
+          * NumberSeqPelaJanela = 2^26
+        * MAX(NumberSeqPeloTTL,NumberSeqPelaJanela) 
+          * O maior e o tamanho da sequência 
 
   6.  Se um nó A recebe dois pacotes com as respectivas flags SYN configuradas em 1 a partir de  uma  mesma  porta.  O  segundo  pacote  pode  ser  uma  retransmissão  do  primeiro  ou  uma nova requisição de conexão caso o nó remoto tenha sofrido uma falha e perdido a conexão anterior. 
     a. Como o nó A consegue distinguir entre os dois casos? 
-      * R A) Para identificar se o pacote de sincronização e uma retransmissão basta obervar o numero de sequencia enviado pelo cliente, se for o mesmo do numero de sequencia X anteriormente encaminhado,  então é uma retransmissão senão tratasse de um nova conexão porque o numero de sequencia será outro aleatoriamente selecionado diferente de X.
+      * R A) Para identificar se o pacote de sincronização é uma retransmissão basta obervar o número de sequência enviado pelo cliente, se for o mesmo do número de sequência X anteriormente encaminhado,  então é uma retransmissão senão tratasse de um nova conexão porque o número de sequencia será outro aleatoriamente selecionado diferente de X e pedidos de SYN acontecem somente no início.
           
            
     b. Descreva  um  algoritmo  sobre  o  que  o  TCP  deve  fazer ao  receber  um  pacote SYN de abertura de conexão. Considere os dois casos descritos acima e ainda a possibilidade de nenhum processo estar escutando na porta de destino. 
@@ -41,9 +53,9 @@
             *  Daqui pra frente e normal o solicitação de abertura
       * R Nova requisição
             * Cliente encaminha pacote com sync 1 e seq x
-            * Servidor recebe e encaminha [sync 1, seq y, ACKnum=x+1]
-            * Cliente encaminha pacote [sync 1, seq k]
-            * Servidor recebe e percebe que o numero de sequencia não esta na faixa da janela e assim sabe que é uma nova conexão
+            * Servidor recebe e encaminha [sync 1, seq y, ACKnum=x+1].
+            * Cliente encaminha pacote [sync 1, seq k].
+            * Servidor recebe e percebe que o número de sequência não é o anteriormente armazenado e assim sabe que é uma nova conexão.
 
   7. O  algoritmo  de  Nagle  requer  que  o  emissor  mantenha um  segmento  de  dados  parcial  até que os dados atinjam o tamanho de um segmento (mesmo que haja dados sinalizados como prioritários) ou chegue um ACK pendente do receptor. 
      a. Suponha  que  as  letras abcdefghi  sejam  enviadas,  uma  por  segundo,  através de  uma  conexão TCP  cujo  RTT  seja  igual a  4,1  segundos.  Desenhe  uma  linha indicando quando cada pacote é enviado e o que ele contém. 
@@ -69,11 +81,11 @@
       4.  Nenhum dos anteriores
       
       (1) Controla a quantidade de dados que o transmissor pode enviar ao receptor sem confirmação.
-      (1) Limita a velocidade de transmissão em função da capacidade de processamento do receptor.
+      (3) Limita a velocidade de transmissão em função da capacidade de processamento do receptor.
       (2) Limita a velocidade de transmissão para evitar congestionamento da rede.
       (2) Reduz a quantidade de dados que pode ser transmitida sem confirmação quando um pacote não chega ao seu destino
-      ( ) Rejeita o pedido de uma nova conexão TCP caso não haja mais banda disponível
-      ( ) Mantém a taxa de transmissão constante ao longo de toda a conexão TCP.
+      (4) Rejeita o pedido de uma nova conexão TCP caso não haja mais banda disponível
+      (2) Mantém a taxa de transmissão constante ao longo de toda a conexão TCP.
 
   12. Supondo uma comunicação TCP iniciada e terminada pelo cliente. Numere a ordem dos pacotes e deixe em branco os pacotes que não corresponderem a uma comunicação TCP.
       (3/4) Cliente e Servidor trocam pacotes de dados com ACK=1, SYN=0 , FIN=0
