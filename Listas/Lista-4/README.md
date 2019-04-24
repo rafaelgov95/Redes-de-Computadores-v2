@@ -127,7 +127,11 @@
 
   13) Considerando os seguintes dados, determine quantos bytes no máximo podem ser enviados
   do servidor para o cliente, sem confirmação:
+
   – último número de confirmação recebido pelo servidor: 9000
-  – janela de recepção anunciada do cliente: 10000 bytes
   – último número de seqüência enviado pelo servidor: 12000
-  – janela do emissor é de 7000 bytes    
+  – janela do emissor é de 7000 bytes
+  – janela de recepção anunciada do cliente: 10000 bytes
+  
+    * Enviados pelo servidor é não confirmados = 12000 - 9000 = 3000
+    * Janela do emissor  7000 - 3000 = 4000
